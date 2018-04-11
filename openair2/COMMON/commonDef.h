@@ -171,7 +171,7 @@ typedef struct {
   /* Type Of Number           */
 #define MSISDN_TON_UNKNOWKN     0b000
 #define MSISDN_TON_INTERNATIONAL    0b001
-#define MSISDN_TON_NATIONAL     0b010
+#define MSISDN_TON_NATIONAL     0b010 
 #define MSISDN_TON_NETWORK      0b011
 #define MSISDN_TON_SUBCRIBER        0b100
 #define MSISDN_TON_ABBREVIATED      0b110

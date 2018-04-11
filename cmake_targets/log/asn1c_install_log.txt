@@ -1,0 +1,924 @@
+Cloning into '/tmp/asn1c'...
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for bison... bison -y
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for ar... /usr/bin/ar
+checking for ANSI C header files... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking whether byte ordering is bigendian... no
+checking for off_t... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for intmax_t... yes
+checking for library containing getopt... none required
+checking for strtoimax... yes
+checking for strtoll... yes
+checking for mergesort... no
+checking for mkstemps... yes
+configure: creating ./config.status
+config.status: creating skeletons/standard-modules/Makefile
+config.status: creating skeletons/tests/Makefile
+config.status: creating libasn1compiler/Makefile
+config.status: creating libasn1parser/Makefile
+config.status: creating libasn1print/Makefile
+config.status: creating asn1c/tests/Makefile
+config.status: creating libasn1fix/Makefile
+config.status: creating doc/docsrc/Makefile
+config.status: creating skeletons/Makefile
+config.status: creating examples/Makefile
+config.status: creating tests/Makefile
+config.status: creating asn1c/Makefile
+config.status: creating doc/Makefile
+config.status: creating asn1c.spec
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/bash /tmp/asn1c/missing --run aclocal-1.11 -I m4
+/tmp/asn1c/missing: line 54: aclocal-1.11: command not found
+WARNING: `aclocal-1.11' is missing on your system.  You should only need it if
+         you modified `acinclude.m4' or `configure.ac'.  You might want
+         to install the `Automake' and `Perl' packages.  Grab them from
+         any GNU archive site.
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/bash /tmp/asn1c/missing --run autoconf
+ cd . && /bin/bash /tmp/asn1c/missing --run automake-1.11 --foreign
+/tmp/asn1c/missing: line 54: automake-1.11: command not found
+WARNING: `automake-1.11' is missing on your system.  You should only need it if
+         you modified `Makefile.am', `acinclude.m4' or `configure.ac'.
+         You might want to install the `Automake' and `Perl' packages.
+         Grab them from any GNU archive site.
+aclocal.m4:16: warning: this file was generated for autoconf 2.63.
+You have another version of autoconf.  It may work, but is not guaranteed to.
+If you have problems, you may need to regenerate the build system entirely.
+To do so, use the procedure documented by the package, typically `autoreconf'.
+configure.ac:6: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2672: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2689: AC_LINK_IFELSE is expanded from...
+m4/libtool.m4:1018: _LT_SYS_MODULE_PATH_AIX is expanded from...
+m4/libtool.m4:4127: _LT_LINKER_SHLIBS is expanded from...
+m4/libtool.m4:5198: _LT_LANG_C_CONFIG is expanded from...
+m4/libtool.m4:138: _LT_SETUP is expanded from...
+m4/libtool.m4:67: LT_INIT is expanded from...
+m4/libtool.m4:103: AM_PROG_LIBTOOL is expanded from...
+configure.ac:6: the top level
+configure.ac:6: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2672: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2689: AC_LINK_IFELSE is expanded from...
+m4/libtool.m4:4127: _LT_LINKER_SHLIBS is expanded from...
+m4/libtool.m4:5198: _LT_LANG_C_CONFIG is expanded from...
+m4/libtool.m4:138: _LT_SETUP is expanded from...
+m4/libtool.m4:67: LT_INIT is expanded from...
+m4/libtool.m4:103: AM_PROG_LIBTOOL is expanded from...
+configure.ac:6: the top level
+/bin/bash ./config.status --recheck
+running CONFIG_SHELL=/bin/bash /bin/bash ./configure --no-create --no-recursion
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for bison... bison -y
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for ar... /usr/bin/ar
+checking for ANSI C header files... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking whether byte ordering is bigendian... no
+checking for off_t... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for intmax_t... yes
+checking for library containing getopt... none required
+checking for strtoimax... yes
+checking for strtoll... yes
+checking for mergesort... no
+checking for mkstemps... yes
+configure: creating ./config.status
+ /bin/bash ./config.status
+config.status: creating skeletons/standard-modules/Makefile
+config.status: creating skeletons/tests/Makefile
+config.status: creating libasn1compiler/Makefile
+config.status: creating libasn1parser/Makefile
+config.status: creating libasn1print/Makefile
+config.status: creating asn1c/tests/Makefile
+config.status: creating libasn1fix/Makefile
+config.status: creating doc/docsrc/Makefile
+config.status: creating skeletons/Makefile
+config.status: creating examples/Makefile
+config.status: creating tests/Makefile
+config.status: creating asn1c/Makefile
+config.status: creating doc/Makefile
+config.status: creating asn1c.spec
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+(CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/bash /tmp/asn1c/missing --run autoheader)
+configure.ac:6: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2672: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2689: AC_LINK_IFELSE is expanded from...
+m4/libtool.m4:1018: _LT_SYS_MODULE_PATH_AIX is expanded from...
+m4/libtool.m4:4127: _LT_LINKER_SHLIBS is expanded from...
+m4/libtool.m4:5198: _LT_LANG_C_CONFIG is expanded from...
+m4/libtool.m4:138: _LT_SETUP is expanded from...
+m4/libtool.m4:67: LT_INIT is expanded from...
+m4/libtool.m4:103: AM_PROG_LIBTOOL is expanded from...
+configure.ac:6: the top level
+configure.ac:6: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2672: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2689: AC_LINK_IFELSE is expanded from...
+m4/libtool.m4:4127: _LT_LINKER_SHLIBS is expanded from...
+m4/libtool.m4:5198: _LT_LANG_C_CONFIG is expanded from...
+m4/libtool.m4:138: _LT_SETUP is expanded from...
+m4/libtool.m4:67: LT_INIT is expanded from...
+m4/libtool.m4:103: AM_PROG_LIBTOOL is expanded from...
+configure.ac:6: the top level
+rm -f stamp-h1
+touch config.h.in
+cd . && /bin/bash ./config.status config.h
+config.status: creating config.h
+make  all-recursive
+make[1]: Entering directory '/tmp/asn1c'
+Making all in libasn1parser
+make[2]: Entering directory '/tmp/asn1c/libasn1parser'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c -o asn1parser.lo asn1parser.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c -o asn1p_y.lo asn1p_y.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c -o asn1p_l.lo asn1p_l.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c -o asn1p_module.lo asn1p_module.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c asn1p_l.c  -fPIC -DPIC -o .libs/asn1p_l.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c asn1p_y.c  -fPIC -DPIC -o .libs/asn1p_y.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c asn1parser.c  -fPIC -DPIC -o .libs/asn1parser.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c asn1p_module.c  -fPIC -DPIC -o .libs/asn1p_module.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c asn1p_module.c -o asn1p_module.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c asn1parser.c -o asn1parser.o >/dev/null 2>&1
+mv -f .deps/asn1p_module.Tpo .deps/asn1p_module.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c -o asn1p_oid.lo asn1p_oid.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c asn1p_oid.c  -fPIC -DPIC -o .libs/asn1p_oid.o
+mv -f .deps/asn1parser.Tpo .deps/asn1parser.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c -o asn1p_value.lo asn1p_value.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c asn1p_value.c  -fPIC -DPIC -o .libs/asn1p_value.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c asn1p_oid.c -o asn1p_oid.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c asn1p_value.c -o asn1p_value.o >/dev/null 2>&1
+mv -f .deps/asn1p_oid.Tpo .deps/asn1p_oid.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c -o asn1p_expr.lo asn1p_expr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c asn1p_expr.c  -fPIC -DPIC -o .libs/asn1p_expr.o
+mv -f .deps/asn1p_value.Tpo .deps/asn1p_value.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c -o asn1p_xports.lo asn1p_xports.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c asn1p_xports.c  -fPIC -DPIC -o .libs/asn1p_xports.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c asn1p_expr.c -o asn1p_expr.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c asn1p_xports.c -o asn1p_xports.o >/dev/null 2>&1
+mv -f .deps/asn1p_xports.Tpo .deps/asn1p_xports.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c -o asn1p_constr.lo asn1p_constr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c asn1p_constr.c  -fPIC -DPIC -o .libs/asn1p_constr.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c asn1p_l.c -o asn1p_l.o >/dev/null 2>&1
+mv -f .deps/asn1p_expr.Tpo .deps/asn1p_expr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c -o asn1p_param.lo asn1p_param.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c asn1p_constr.c -o asn1p_constr.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c asn1p_param.c  -fPIC -DPIC -o .libs/asn1p_param.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c asn1p_param.c -o asn1p_param.o >/dev/null 2>&1
+mv -f .deps/asn1p_constr.Tpo .deps/asn1p_constr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c -o asn1p_class.lo asn1p_class.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c asn1p_class.c  -fPIC -DPIC -o .libs/asn1p_class.o
+mv -f .deps/asn1p_param.Tpo .deps/asn1p_param.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c -o asn1p_ref.lo asn1p_ref.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c asn1p_ref.c  -fPIC -DPIC -o .libs/asn1p_ref.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c asn1p_class.c -o asn1p_class.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c asn1p_ref.c -o asn1p_ref.o >/dev/null 2>&1
+mv -f .deps/asn1p_class.Tpo .deps/asn1p_class.Plo
+mv -f .deps/asn1p_ref.Tpo .deps/asn1p_ref.Plo
+mv -f .deps/asn1p_l.Tpo .deps/asn1p_l.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c asn1p_y.c -o asn1p_y.o >/dev/null 2>&1
+mv -f .deps/asn1p_y.Tpo .deps/asn1p_y.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1parser.la  asn1parser.lo asn1p_y.lo asn1p_l.lo asn1p_module.lo asn1p_oid.lo asn1p_value.lo asn1p_expr.lo asn1p_xports.lo asn1p_constr.lo asn1p_param.lo asn1p_class.lo asn1p_ref.lo  
+libtool: link: /usr/bin/ar cru .libs/libasn1parser.a  asn1parser.o asn1p_y.o asn1p_l.o asn1p_module.o asn1p_oid.o asn1p_value.o asn1p_expr.o asn1p_xports.o asn1p_constr.o asn1p_param.o asn1p_class.o asn1p_ref.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1parser.a
+libtool: link: ( cd ".libs" && rm -f "libasn1parser.la" && ln -s "../libasn1parser.la" "libasn1parser.la" )
+make[2]: Leaving directory '/tmp/asn1c/libasn1parser'
+Making all in libasn1fix
+make[2]: Entering directory '/tmp/asn1c/libasn1fix'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c -o asn1fix.lo asn1fix.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c -o asn1fix_misc.lo asn1fix_misc.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c -o asn1fix_value.lo asn1fix_value.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c -o asn1fix_compat.lo asn1fix_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c asn1fix.c  -fPIC -DPIC -o .libs/asn1fix.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c asn1fix_value.c  -fPIC -DPIC -o .libs/asn1fix_value.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c asn1fix_misc.c  -fPIC -DPIC -o .libs/asn1fix_misc.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c asn1fix_compat.c  -fPIC -DPIC -o .libs/asn1fix_compat.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c asn1fix_compat.c -o asn1fix_compat.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c asn1fix_value.c -o asn1fix_value.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c asn1fix_misc.c -o asn1fix_misc.o >/dev/null 2>&1
+mv -f .deps/asn1fix_compat.Tpo .deps/asn1fix_compat.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c -o asn1fix_constr.lo asn1fix_constr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c asn1fix_constr.c  -fPIC -DPIC -o .libs/asn1fix_constr.o
+mv -f .deps/asn1fix_value.Tpo .deps/asn1fix_value.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c -o asn1fix_cstring.lo asn1fix_cstring.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c asn1fix_cstring.c  -fPIC -DPIC -o .libs/asn1fix_cstring.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c asn1fix.c -o asn1fix.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c asn1fix_cstring.c -o asn1fix_cstring.o >/dev/null 2>&1
+mv -f .deps/asn1fix_misc.Tpo .deps/asn1fix_misc.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c -o asn1fix_retrieve.lo asn1fix_retrieve.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c asn1fix_retrieve.c  -fPIC -DPIC -o .libs/asn1fix_retrieve.o
+mv -f .deps/asn1fix_cstring.Tpo .deps/asn1fix_cstring.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c -o asn1fix_bitstring.lo asn1fix_bitstring.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c asn1fix_constr.c -o asn1fix_constr.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c asn1fix_bitstring.c  -fPIC -DPIC -o .libs/asn1fix_bitstring.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c asn1fix_retrieve.c -o asn1fix_retrieve.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c asn1fix_bitstring.c -o asn1fix_bitstring.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constr.Tpo .deps/asn1fix_constr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c -o asn1fix_constraint.lo asn1fix_constraint.c
+mv -f .deps/asn1fix.Tpo .deps/asn1fix.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c asn1fix_constraint.c  -fPIC -DPIC -o .libs/asn1fix_constraint.o
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c -o asn1fix_integer.lo asn1fix_integer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c asn1fix_integer.c  -fPIC -DPIC -o .libs/asn1fix_integer.o
+mv -f .deps/asn1fix_bitstring.Tpo .deps/asn1fix_bitstring.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c -o asn1fix_crange.lo asn1fix_crange.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c asn1fix_integer.c -o asn1fix_integer.o >/dev/null 2>&1
+mv -f .deps/asn1fix_retrieve.Tpo .deps/asn1fix_retrieve.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c -o asn1fix_dereft.lo asn1fix_dereft.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c asn1fix_crange.c  -fPIC -DPIC -o .libs/asn1fix_crange.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c asn1fix_dereft.c  -fPIC -DPIC -o .libs/asn1fix_dereft.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c asn1fix_constraint.c -o asn1fix_constraint.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c asn1fix_dereft.c -o asn1fix_dereft.o >/dev/null 2>&1
+mv -f .deps/asn1fix_integer.Tpo .deps/asn1fix_integer.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c -o asn1fix_derefv.lo asn1fix_derefv.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c asn1fix_derefv.c  -fPIC -DPIC -o .libs/asn1fix_derefv.o
+mv -f .deps/asn1fix_dereft.Tpo .deps/asn1fix_dereft.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c -o asn1fix_export.lo asn1fix_export.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c asn1fix_export.c  -fPIC -DPIC -o .libs/asn1fix_export.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c asn1fix_derefv.c -o asn1fix_derefv.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constraint.Tpo .deps/asn1fix_constraint.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c -o asn1fix_param.lo asn1fix_param.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c asn1fix_export.c -o asn1fix_export.o >/dev/null 2>&1
+mv -f .deps/asn1fix_derefv.Tpo .deps/asn1fix_derefv.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c -o asn1fix_class.lo asn1fix_class.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c asn1fix_param.c  -fPIC -DPIC -o .libs/asn1fix_param.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c asn1fix_class.c  -fPIC -DPIC -o .libs/asn1fix_class.o
+mv -f .deps/asn1fix_export.Tpo .deps/asn1fix_export.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c -o asn1fix_tags.lo asn1fix_tags.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c asn1fix_crange.c -o asn1fix_crange.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c asn1fix_tags.c  -fPIC -DPIC -o .libs/asn1fix_tags.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c asn1fix_class.c -o asn1fix_class.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c asn1fix_param.c -o asn1fix_param.o >/dev/null 2>&1
+mv -f .deps/asn1fix_class.Tpo .deps/asn1fix_class.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c -o asn1fix_enum.lo asn1fix_enum.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c asn1fix_enum.c  -fPIC -DPIC -o .libs/asn1fix_enum.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c asn1fix_tags.c -o asn1fix_tags.o >/dev/null 2>&1
+mv -f .deps/asn1fix_param.Tpo .deps/asn1fix_param.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c -o asn1fix_cws.lo asn1fix_cws.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c asn1fix_cws.c  -fPIC -DPIC -o .libs/asn1fix_cws.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c asn1fix_enum.c -o asn1fix_enum.o >/dev/null 2>&1
+mv -f .deps/asn1fix_tags.Tpo .deps/asn1fix_tags.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c -o asn1fix_constraint_compat.lo asn1fix_constraint_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c asn1fix_constraint_compat.c  -fPIC -DPIC -o .libs/asn1fix_constraint_compat.o
+mv -f .deps/asn1fix_crange.Tpo .deps/asn1fix_crange.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c asn1fix_constraint_compat.c -o asn1fix_constraint_compat.o >/dev/null 2>&1
+mv -f .deps/asn1fix_enum.Tpo .deps/asn1fix_enum.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c asn1fix_cws.c -o asn1fix_cws.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constraint_compat.Tpo .deps/asn1fix_constraint_compat.Plo
+mv -f .deps/asn1fix_cws.Tpo .deps/asn1fix_cws.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1fix.la  asn1fix.lo asn1fix_misc.lo asn1fix_value.lo asn1fix_compat.lo asn1fix_constr.lo asn1fix_cstring.lo asn1fix_retrieve.lo asn1fix_bitstring.lo asn1fix_constraint.lo asn1fix_integer.lo asn1fix_crange.lo asn1fix_dereft.lo asn1fix_derefv.lo asn1fix_export.lo asn1fix_param.lo asn1fix_class.lo asn1fix_tags.lo asn1fix_enum.lo asn1fix_cws.lo asn1fix_constraint_compat.lo  
+libtool: link: /usr/bin/ar cru .libs/libasn1fix.a  asn1fix.o asn1fix_misc.o asn1fix_value.o asn1fix_compat.o asn1fix_constr.o asn1fix_cstring.o asn1fix_retrieve.o asn1fix_bitstring.o asn1fix_constraint.o asn1fix_integer.o asn1fix_crange.o asn1fix_dereft.o asn1fix_derefv.o asn1fix_export.o asn1fix_param.o asn1fix_class.o asn1fix_tags.o asn1fix_enum.o asn1fix_cws.o asn1fix_constraint_compat.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1fix.a
+libtool: link: ( cd ".libs" && rm -f "libasn1fix.la" && ln -s "../libasn1fix.la" "libasn1fix.la" )
+make[2]: Leaving directory '/tmp/asn1c/libasn1fix'
+Making all in libasn1print
+make[2]: Entering directory '/tmp/asn1c/libasn1print'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c -o asn1print.lo asn1print.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c asn1print.c  -fPIC -DPIC -o .libs/asn1print.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c asn1print.c -o asn1print.o >/dev/null 2>&1
+mv -f .deps/asn1print.Tpo .deps/asn1print.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1print.la  asn1print.lo  
+libtool: link: /usr/bin/ar cru .libs/libasn1print.a  asn1print.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1print.a
+libtool: link: ( cd ".libs" && rm -f "libasn1print.la" && ln -s "../libasn1print.la" "libasn1print.la" )
+make[2]: Leaving directory '/tmp/asn1c/libasn1print'
+Making all in libasn1compiler
+make[2]: Entering directory '/tmp/asn1c/libasn1compiler'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c -o asn1compiler.lo asn1compiler.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c -o asn1c_misc.lo asn1c_misc.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c -o asn1c_out.lo asn1c_out.c
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c -o asn1c_lang.lo asn1c_lang.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c asn1compiler.c  -fPIC -DPIC -o .libs/asn1compiler.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c asn1c_out.c  -fPIC -DPIC -o .libs/asn1c_out.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c asn1c_misc.c  -fPIC -DPIC -o .libs/asn1c_misc.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c asn1c_lang.c  -fPIC -DPIC -o .libs/asn1c_lang.o
+asn1c_misc.c: In function ‘asn1c_type_fits_long’:
+asn1c_misc.c:401:22: warning: integer constant is so large that it is unsigned
+    && left.value >= -9223372036854775808LL
+                      ^
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c asn1c_lang.c -o asn1c_lang.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c asn1c_out.c -o asn1c_out.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c asn1compiler.c -o asn1compiler.o >/dev/null 2>&1
+mv -f .deps/asn1c_lang.Tpo .deps/asn1c_lang.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c -o asn1c_save.lo asn1c_save.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c asn1c_save.c  -fPIC -DPIC -o .libs/asn1c_save.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c asn1c_misc.c -o asn1c_misc.o >/dev/null 2>&1
+mv -f .deps/asn1c_out.Tpo .deps/asn1c_out.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c -o asn1c_C.lo asn1c_C.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c asn1c_C.c  -fPIC -DPIC -o .libs/asn1c_C.o
+mv -f .deps/asn1compiler.Tpo .deps/asn1compiler.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c -o asn1c_constraint.lo asn1c_constraint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c asn1c_constraint.c  -fPIC -DPIC -o .libs/asn1c_constraint.o
+asn1c_C.c: In function ‘expr_elements_count’:
+asn1c_C.c:1849:32: warning: comparison of constant ‘67’ with boolean expression is always false [-Wbool-compare]
+  && !topmost_parent->expr_type == ASN_BASIC_INTEGER
+                                ^
+asn1c_C.c:1849:32: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+asn1c_C.c:1850:32: warning: comparison of constant ‘69’ with boolean expression is always false [-Wbool-compare]
+  && !topmost_parent->expr_type == ASN_BASIC_ENUMERATED)
+                                ^
+asn1c_C.c:1850:32: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+mv -f .deps/asn1c_misc.Tpo .deps/asn1c_misc.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c -o asn1c_compat.lo asn1c_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c asn1c_compat.c  -fPIC -DPIC -o .libs/asn1c_compat.o
+asn1c_compat.c: In function ‘asn1c_open_file’:
+asn1c_compat.c:87:2: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
+  (void)ftruncate(fd, 0);
+  ^
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c asn1c_compat.c -o asn1c_compat.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c asn1c_save.c -o asn1c_save.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c asn1c_constraint.c -o asn1c_constraint.o >/dev/null 2>&1
+mv -f .deps/asn1c_compat.Tpo .deps/asn1c_compat.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c -o asn1c_fdeps.lo asn1c_fdeps.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c asn1c_fdeps.c  -fPIC -DPIC -o .libs/asn1c_fdeps.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c asn1c_fdeps.c -o asn1c_fdeps.o >/dev/null 2>&1
+mv -f .deps/asn1c_save.Tpo .deps/asn1c_save.Plo
+mv -f .deps/asn1c_constraint.Tpo .deps/asn1c_constraint.Plo
+mv -f .deps/asn1c_fdeps.Tpo .deps/asn1c_fdeps.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c asn1c_C.c -o asn1c_C.o >/dev/null 2>&1
+mv -f .deps/asn1c_C.Tpo .deps/asn1c_C.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1compiler.la  asn1compiler.lo asn1c_misc.lo asn1c_out.lo asn1c_lang.lo asn1c_save.lo asn1c_C.lo asn1c_constraint.lo asn1c_compat.lo asn1c_fdeps.lo  
+libtool: link: /usr/bin/ar cru .libs/libasn1compiler.a  asn1compiler.o asn1c_misc.o asn1c_out.o asn1c_lang.o asn1c_save.o asn1c_C.o asn1c_constraint.o asn1c_compat.o asn1c_fdeps.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1compiler.a
+libtool: link: ( cd ".libs" && rm -f "libasn1compiler.la" && ln -s "../libasn1compiler.la" "libasn1compiler.la" )
+make[2]: Leaving directory '/tmp/asn1c/libasn1compiler'
+Making all in skeletons
+make[2]: Entering directory '/tmp/asn1c/skeletons'
+Making all in .
+make[3]: Entering directory '/tmp/asn1c/skeletons'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/tmp/asn1c/skeletons'
+Making all in standard-modules
+make[3]: Entering directory '/tmp/asn1c/skeletons/standard-modules'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/asn1c/skeletons/standard-modules'
+Making all in tests
+make[3]: Entering directory '/tmp/asn1c/skeletons/tests'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/asn1c/skeletons/tests'
+make[2]: Leaving directory '/tmp/asn1c/skeletons'
+Making all in examples
+make[2]: Entering directory '/tmp/asn1c/examples'
+./crfc2asn1.pl rfc3280.txt
+./crfc2asn1.pl rfc3280.txt
+./crfc2asn1.pl rfc3525.txt
+./crfc2asn1.pl rfc4511.txt
+Found Lightweight-Directory-Access-Protocol-V3 at line 2983
+=> Saving as rfc4511-Lightweight-Directory-Access-Protocol-V3.asn1
+Found PKIX1Explicit88 at line 5124
+=> Saving as rfc3280-PKIX1Explicit88.asn1
+Found PKIX1Implicit88 at line 5850
+=> Saving as rfc3280-PKIX1Implicit88.asn1
+Found MEDIA-GATEWAY-CONTROL at line 5177
+=> Saving as rfc3525-MEDIA-GATEWAY-CONTROL.asn1
+Found PKIX1Explicit88 at line 5124
+=> Saving as rfc3280-PKIX1Explicit88.asn1
+Found PKIX1Implicit88 at line 5850
+=> Saving as rfc3280-PKIX1Implicit88.asn1
+make[2]: Leaving directory '/tmp/asn1c/examples'
+Making all in tests
+make[2]: Entering directory '/tmp/asn1c/tests'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/asn1c/tests'
+Making all in doc
+make[2]: Entering directory '/tmp/asn1c/doc'
+Making all in docsrc
+make[3]: Entering directory '/tmp/asn1c/doc/docsrc'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/asn1c/doc/docsrc'
+make[3]: Entering directory '/tmp/asn1c/doc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/tmp/asn1c/doc'
+make[2]: Leaving directory '/tmp/asn1c/doc'
+Making all in asn1c
+make[2]: Entering directory '/tmp/asn1c/asn1c'
+Making all in .
+make[3]: Entering directory '/tmp/asn1c/asn1c'
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c.o -MD -MP -MF .deps/asn1c.Tpo -c -o asn1c.o asn1c.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT unber.o -MD -MP -MF .deps/unber.Tpo -c -o unber.o unber.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT enber.o -MD -MP -MF .deps/enber.Tpo -c -o enber.o enber.c
+mv -f .deps/asn1c.Tpo .deps/asn1c.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o asn1c asn1c.o ../libasn1parser/libasn1parser.la ../libasn1print/libasn1print.la ../libasn1fix/libasn1fix.la ../libasn1compiler/libasn1compiler.la 
+mv -f .deps/enber.Tpo .deps/enber.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o enber enber.o  
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o asn1c asn1c.o  ../libasn1parser/.libs/libasn1parser.a ../libasn1print/.libs/libasn1print.a ../libasn1fix/.libs/libasn1fix.a ../libasn1compiler/.libs/libasn1compiler.a
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o enber enber.o 
+mv -f .deps/unber.Tpo .deps/unber.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o unber unber.o  
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o unber unber.o 
+make[3]: Leaving directory '/tmp/asn1c/asn1c'
+Making all in tests
+make[3]: Entering directory '/tmp/asn1c/asn1c/tests'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/asn1c/asn1c/tests'
+make[2]: Leaving directory '/tmp/asn1c/asn1c'
+make[2]: Entering directory '/tmp/asn1c'
+make[2]: Leaving directory '/tmp/asn1c'
+make[1]: Leaving directory '/tmp/asn1c'
+Making install in libasn1parser
+make[1]: Entering directory '/tmp/asn1c/libasn1parser'
+./expr-h.pl asn1p_expr.h > asn1p_expr_str.h
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c -o asn1parser.lo asn1parser.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c asn1parser.c  -fPIC -DPIC -o .libs/asn1parser.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1parser.lo -MD -MP -MF .deps/asn1parser.Tpo -c asn1parser.c -o asn1parser.o >/dev/null 2>&1
+mv -f .deps/asn1parser.Tpo .deps/asn1parser.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c -o asn1p_y.lo asn1p_y.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c asn1p_y.c  -fPIC -DPIC -o .libs/asn1p_y.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_y.lo -MD -MP -MF .deps/asn1p_y.Tpo -c asn1p_y.c -o asn1p_y.o >/dev/null 2>&1
+mv -f .deps/asn1p_y.Tpo .deps/asn1p_y.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c -o asn1p_l.lo asn1p_l.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c asn1p_l.c  -fPIC -DPIC -o .libs/asn1p_l.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_l.lo -MD -MP -MF .deps/asn1p_l.Tpo -c asn1p_l.c -o asn1p_l.o >/dev/null 2>&1
+mv -f .deps/asn1p_l.Tpo .deps/asn1p_l.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c -o asn1p_module.lo asn1p_module.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c asn1p_module.c  -fPIC -DPIC -o .libs/asn1p_module.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_module.lo -MD -MP -MF .deps/asn1p_module.Tpo -c asn1p_module.c -o asn1p_module.o >/dev/null 2>&1
+mv -f .deps/asn1p_module.Tpo .deps/asn1p_module.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c -o asn1p_oid.lo asn1p_oid.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c asn1p_oid.c  -fPIC -DPIC -o .libs/asn1p_oid.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_oid.lo -MD -MP -MF .deps/asn1p_oid.Tpo -c asn1p_oid.c -o asn1p_oid.o >/dev/null 2>&1
+mv -f .deps/asn1p_oid.Tpo .deps/asn1p_oid.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c -o asn1p_value.lo asn1p_value.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c asn1p_value.c  -fPIC -DPIC -o .libs/asn1p_value.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_value.lo -MD -MP -MF .deps/asn1p_value.Tpo -c asn1p_value.c -o asn1p_value.o >/dev/null 2>&1
+mv -f .deps/asn1p_value.Tpo .deps/asn1p_value.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c -o asn1p_expr.lo asn1p_expr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c asn1p_expr.c  -fPIC -DPIC -o .libs/asn1p_expr.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_expr.lo -MD -MP -MF .deps/asn1p_expr.Tpo -c asn1p_expr.c -o asn1p_expr.o >/dev/null 2>&1
+mv -f .deps/asn1p_expr.Tpo .deps/asn1p_expr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c -o asn1p_xports.lo asn1p_xports.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c asn1p_xports.c  -fPIC -DPIC -o .libs/asn1p_xports.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_xports.lo -MD -MP -MF .deps/asn1p_xports.Tpo -c asn1p_xports.c -o asn1p_xports.o >/dev/null 2>&1
+mv -f .deps/asn1p_xports.Tpo .deps/asn1p_xports.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c -o asn1p_constr.lo asn1p_constr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c asn1p_constr.c  -fPIC -DPIC -o .libs/asn1p_constr.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_constr.lo -MD -MP -MF .deps/asn1p_constr.Tpo -c asn1p_constr.c -o asn1p_constr.o >/dev/null 2>&1
+mv -f .deps/asn1p_constr.Tpo .deps/asn1p_constr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c -o asn1p_param.lo asn1p_param.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c asn1p_param.c  -fPIC -DPIC -o .libs/asn1p_param.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_param.lo -MD -MP -MF .deps/asn1p_param.Tpo -c asn1p_param.c -o asn1p_param.o >/dev/null 2>&1
+mv -f .deps/asn1p_param.Tpo .deps/asn1p_param.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c -o asn1p_class.lo asn1p_class.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c asn1p_class.c  -fPIC -DPIC -o .libs/asn1p_class.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_class.lo -MD -MP -MF .deps/asn1p_class.Tpo -c asn1p_class.c -o asn1p_class.o >/dev/null 2>&1
+mv -f .deps/asn1p_class.Tpo .deps/asn1p_class.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c -o asn1p_ref.lo asn1p_ref.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c asn1p_ref.c  -fPIC -DPIC -o .libs/asn1p_ref.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1p_ref.lo -MD -MP -MF .deps/asn1p_ref.Tpo -c asn1p_ref.c -o asn1p_ref.o >/dev/null 2>&1
+mv -f .deps/asn1p_ref.Tpo .deps/asn1p_ref.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1parser.la  asn1parser.lo asn1p_y.lo asn1p_l.lo asn1p_module.lo asn1p_oid.lo asn1p_value.lo asn1p_expr.lo asn1p_xports.lo asn1p_constr.lo asn1p_param.lo asn1p_class.lo asn1p_ref.lo  
+libtool: link: rm -fr  .libs/libasn1parser.a .libs/libasn1parser.la
+libtool: link: /usr/bin/ar cru .libs/libasn1parser.a  asn1parser.o asn1p_y.o asn1p_l.o asn1p_module.o asn1p_oid.o asn1p_value.o asn1p_expr.o asn1p_xports.o asn1p_constr.o asn1p_param.o asn1p_class.o asn1p_ref.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1parser.a
+libtool: link: ( cd ".libs" && rm -f "libasn1parser.la" && ln -s "../libasn1parser.la" "libasn1parser.la" )
+make[2]: Entering directory '/tmp/asn1c/libasn1parser'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/libasn1parser'
+make[1]: Leaving directory '/tmp/asn1c/libasn1parser'
+Making install in libasn1fix
+make[1]: Entering directory '/tmp/asn1c/libasn1fix'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c -o asn1fix.lo asn1fix.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c asn1fix.c  -fPIC -DPIC -o .libs/asn1fix.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix.lo -MD -MP -MF .deps/asn1fix.Tpo -c asn1fix.c -o asn1fix.o >/dev/null 2>&1
+mv -f .deps/asn1fix.Tpo .deps/asn1fix.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c -o asn1fix_misc.lo asn1fix_misc.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c asn1fix_misc.c  -fPIC -DPIC -o .libs/asn1fix_misc.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_misc.lo -MD -MP -MF .deps/asn1fix_misc.Tpo -c asn1fix_misc.c -o asn1fix_misc.o >/dev/null 2>&1
+mv -f .deps/asn1fix_misc.Tpo .deps/asn1fix_misc.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c -o asn1fix_value.lo asn1fix_value.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c asn1fix_value.c  -fPIC -DPIC -o .libs/asn1fix_value.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_value.lo -MD -MP -MF .deps/asn1fix_value.Tpo -c asn1fix_value.c -o asn1fix_value.o >/dev/null 2>&1
+mv -f .deps/asn1fix_value.Tpo .deps/asn1fix_value.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c -o asn1fix_compat.lo asn1fix_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c asn1fix_compat.c  -fPIC -DPIC -o .libs/asn1fix_compat.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_compat.lo -MD -MP -MF .deps/asn1fix_compat.Tpo -c asn1fix_compat.c -o asn1fix_compat.o >/dev/null 2>&1
+mv -f .deps/asn1fix_compat.Tpo .deps/asn1fix_compat.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c -o asn1fix_constr.lo asn1fix_constr.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c asn1fix_constr.c  -fPIC -DPIC -o .libs/asn1fix_constr.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constr.lo -MD -MP -MF .deps/asn1fix_constr.Tpo -c asn1fix_constr.c -o asn1fix_constr.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constr.Tpo .deps/asn1fix_constr.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c -o asn1fix_cstring.lo asn1fix_cstring.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c asn1fix_cstring.c  -fPIC -DPIC -o .libs/asn1fix_cstring.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cstring.lo -MD -MP -MF .deps/asn1fix_cstring.Tpo -c asn1fix_cstring.c -o asn1fix_cstring.o >/dev/null 2>&1
+mv -f .deps/asn1fix_cstring.Tpo .deps/asn1fix_cstring.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c -o asn1fix_retrieve.lo asn1fix_retrieve.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c asn1fix_retrieve.c  -fPIC -DPIC -o .libs/asn1fix_retrieve.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_retrieve.lo -MD -MP -MF .deps/asn1fix_retrieve.Tpo -c asn1fix_retrieve.c -o asn1fix_retrieve.o >/dev/null 2>&1
+mv -f .deps/asn1fix_retrieve.Tpo .deps/asn1fix_retrieve.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c -o asn1fix_bitstring.lo asn1fix_bitstring.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c asn1fix_bitstring.c  -fPIC -DPIC -o .libs/asn1fix_bitstring.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_bitstring.lo -MD -MP -MF .deps/asn1fix_bitstring.Tpo -c asn1fix_bitstring.c -o asn1fix_bitstring.o >/dev/null 2>&1
+mv -f .deps/asn1fix_bitstring.Tpo .deps/asn1fix_bitstring.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c -o asn1fix_constraint.lo asn1fix_constraint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c asn1fix_constraint.c  -fPIC -DPIC -o .libs/asn1fix_constraint.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint.lo -MD -MP -MF .deps/asn1fix_constraint.Tpo -c asn1fix_constraint.c -o asn1fix_constraint.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constraint.Tpo .deps/asn1fix_constraint.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c -o asn1fix_integer.lo asn1fix_integer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c asn1fix_integer.c  -fPIC -DPIC -o .libs/asn1fix_integer.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_integer.lo -MD -MP -MF .deps/asn1fix_integer.Tpo -c asn1fix_integer.c -o asn1fix_integer.o >/dev/null 2>&1
+mv -f .deps/asn1fix_integer.Tpo .deps/asn1fix_integer.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c -o asn1fix_crange.lo asn1fix_crange.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c asn1fix_crange.c  -fPIC -DPIC -o .libs/asn1fix_crange.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_crange.lo -MD -MP -MF .deps/asn1fix_crange.Tpo -c asn1fix_crange.c -o asn1fix_crange.o >/dev/null 2>&1
+mv -f .deps/asn1fix_crange.Tpo .deps/asn1fix_crange.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c -o asn1fix_dereft.lo asn1fix_dereft.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c asn1fix_dereft.c  -fPIC -DPIC -o .libs/asn1fix_dereft.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_dereft.lo -MD -MP -MF .deps/asn1fix_dereft.Tpo -c asn1fix_dereft.c -o asn1fix_dereft.o >/dev/null 2>&1
+mv -f .deps/asn1fix_dereft.Tpo .deps/asn1fix_dereft.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c -o asn1fix_derefv.lo asn1fix_derefv.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c asn1fix_derefv.c  -fPIC -DPIC -o .libs/asn1fix_derefv.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_derefv.lo -MD -MP -MF .deps/asn1fix_derefv.Tpo -c asn1fix_derefv.c -o asn1fix_derefv.o >/dev/null 2>&1
+mv -f .deps/asn1fix_derefv.Tpo .deps/asn1fix_derefv.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c -o asn1fix_export.lo asn1fix_export.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c asn1fix_export.c  -fPIC -DPIC -o .libs/asn1fix_export.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_export.lo -MD -MP -MF .deps/asn1fix_export.Tpo -c asn1fix_export.c -o asn1fix_export.o >/dev/null 2>&1
+mv -f .deps/asn1fix_export.Tpo .deps/asn1fix_export.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c -o asn1fix_param.lo asn1fix_param.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c asn1fix_param.c  -fPIC -DPIC -o .libs/asn1fix_param.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_param.lo -MD -MP -MF .deps/asn1fix_param.Tpo -c asn1fix_param.c -o asn1fix_param.o >/dev/null 2>&1
+mv -f .deps/asn1fix_param.Tpo .deps/asn1fix_param.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c -o asn1fix_class.lo asn1fix_class.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c asn1fix_class.c  -fPIC -DPIC -o .libs/asn1fix_class.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_class.lo -MD -MP -MF .deps/asn1fix_class.Tpo -c asn1fix_class.c -o asn1fix_class.o >/dev/null 2>&1
+mv -f .deps/asn1fix_class.Tpo .deps/asn1fix_class.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c -o asn1fix_tags.lo asn1fix_tags.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c asn1fix_tags.c  -fPIC -DPIC -o .libs/asn1fix_tags.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_tags.lo -MD -MP -MF .deps/asn1fix_tags.Tpo -c asn1fix_tags.c -o asn1fix_tags.o >/dev/null 2>&1
+mv -f .deps/asn1fix_tags.Tpo .deps/asn1fix_tags.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c -o asn1fix_enum.lo asn1fix_enum.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c asn1fix_enum.c  -fPIC -DPIC -o .libs/asn1fix_enum.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_enum.lo -MD -MP -MF .deps/asn1fix_enum.Tpo -c asn1fix_enum.c -o asn1fix_enum.o >/dev/null 2>&1
+mv -f .deps/asn1fix_enum.Tpo .deps/asn1fix_enum.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c -o asn1fix_cws.lo asn1fix_cws.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c asn1fix_cws.c  -fPIC -DPIC -o .libs/asn1fix_cws.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_cws.lo -MD -MP -MF .deps/asn1fix_cws.Tpo -c asn1fix_cws.c -o asn1fix_cws.o >/dev/null 2>&1
+mv -f .deps/asn1fix_cws.Tpo .deps/asn1fix_cws.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c -o asn1fix_constraint_compat.lo asn1fix_constraint_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c asn1fix_constraint_compat.c  -fPIC -DPIC -o .libs/asn1fix_constraint_compat.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1fix_constraint_compat.lo -MD -MP -MF .deps/asn1fix_constraint_compat.Tpo -c asn1fix_constraint_compat.c -o asn1fix_constraint_compat.o >/dev/null 2>&1
+mv -f .deps/asn1fix_constraint_compat.Tpo .deps/asn1fix_constraint_compat.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1fix.la  asn1fix.lo asn1fix_misc.lo asn1fix_value.lo asn1fix_compat.lo asn1fix_constr.lo asn1fix_cstring.lo asn1fix_retrieve.lo asn1fix_bitstring.lo asn1fix_constraint.lo asn1fix_integer.lo asn1fix_crange.lo asn1fix_dereft.lo asn1fix_derefv.lo asn1fix_export.lo asn1fix_param.lo asn1fix_class.lo asn1fix_tags.lo asn1fix_enum.lo asn1fix_cws.lo asn1fix_constraint_compat.lo  
+libtool: link: rm -fr  .libs/libasn1fix.a .libs/libasn1fix.la
+libtool: link: /usr/bin/ar cru .libs/libasn1fix.a  asn1fix.o asn1fix_misc.o asn1fix_value.o asn1fix_compat.o asn1fix_constr.o asn1fix_cstring.o asn1fix_retrieve.o asn1fix_bitstring.o asn1fix_constraint.o asn1fix_integer.o asn1fix_crange.o asn1fix_dereft.o asn1fix_derefv.o asn1fix_export.o asn1fix_param.o asn1fix_class.o asn1fix_tags.o asn1fix_enum.o asn1fix_cws.o asn1fix_constraint_compat.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1fix.a
+libtool: link: ( cd ".libs" && rm -f "libasn1fix.la" && ln -s "../libasn1fix.la" "libasn1fix.la" )
+make[2]: Entering directory '/tmp/asn1c/libasn1fix'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/libasn1fix'
+make[1]: Leaving directory '/tmp/asn1c/libasn1fix'
+Making install in libasn1print
+make[1]: Entering directory '/tmp/asn1c/libasn1print'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c -o asn1print.lo asn1print.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c asn1print.c  -fPIC -DPIC -o .libs/asn1print.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1print.lo -MD -MP -MF .deps/asn1print.Tpo -c asn1print.c -o asn1print.o >/dev/null 2>&1
+mv -f .deps/asn1print.Tpo .deps/asn1print.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1print.la  asn1print.lo  
+libtool: link: rm -fr  .libs/libasn1print.a .libs/libasn1print.la
+libtool: link: /usr/bin/ar cru .libs/libasn1print.a  asn1print.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1print.a
+libtool: link: ( cd ".libs" && rm -f "libasn1print.la" && ln -s "../libasn1print.la" "libasn1print.la" )
+make[2]: Entering directory '/tmp/asn1c/libasn1print'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/libasn1print'
+make[1]: Leaving directory '/tmp/asn1c/libasn1print'
+Making install in libasn1compiler
+make[1]: Entering directory '/tmp/asn1c/libasn1compiler'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c -o asn1compiler.lo asn1compiler.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c asn1compiler.c  -fPIC -DPIC -o .libs/asn1compiler.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1compiler.lo -MD -MP -MF .deps/asn1compiler.Tpo -c asn1compiler.c -o asn1compiler.o >/dev/null 2>&1
+mv -f .deps/asn1compiler.Tpo .deps/asn1compiler.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c -o asn1c_misc.lo asn1c_misc.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c asn1c_misc.c  -fPIC -DPIC -o .libs/asn1c_misc.o
+asn1c_misc.c: In function ‘asn1c_type_fits_long’:
+asn1c_misc.c:401:22: warning: integer constant is so large that it is unsigned
+    && left.value >= -9223372036854775808LL
+                      ^
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_misc.lo -MD -MP -MF .deps/asn1c_misc.Tpo -c asn1c_misc.c -o asn1c_misc.o >/dev/null 2>&1
+mv -f .deps/asn1c_misc.Tpo .deps/asn1c_misc.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c -o asn1c_out.lo asn1c_out.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c asn1c_out.c  -fPIC -DPIC -o .libs/asn1c_out.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_out.lo -MD -MP -MF .deps/asn1c_out.Tpo -c asn1c_out.c -o asn1c_out.o >/dev/null 2>&1
+mv -f .deps/asn1c_out.Tpo .deps/asn1c_out.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c -o asn1c_lang.lo asn1c_lang.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c asn1c_lang.c  -fPIC -DPIC -o .libs/asn1c_lang.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_lang.lo -MD -MP -MF .deps/asn1c_lang.Tpo -c asn1c_lang.c -o asn1c_lang.o >/dev/null 2>&1
+mv -f .deps/asn1c_lang.Tpo .deps/asn1c_lang.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c -o asn1c_save.lo asn1c_save.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c asn1c_save.c  -fPIC -DPIC -o .libs/asn1c_save.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_save.lo -MD -MP -MF .deps/asn1c_save.Tpo -c asn1c_save.c -o asn1c_save.o >/dev/null 2>&1
+mv -f .deps/asn1c_save.Tpo .deps/asn1c_save.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c -o asn1c_C.lo asn1c_C.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c asn1c_C.c  -fPIC -DPIC -o .libs/asn1c_C.o
+asn1c_C.c: In function ‘expr_elements_count’:
+asn1c_C.c:1849:32: warning: comparison of constant ‘67’ with boolean expression is always false [-Wbool-compare]
+  && !topmost_parent->expr_type == ASN_BASIC_INTEGER
+                                ^
+asn1c_C.c:1849:32: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+asn1c_C.c:1850:32: warning: comparison of constant ‘69’ with boolean expression is always false [-Wbool-compare]
+  && !topmost_parent->expr_type == ASN_BASIC_ENUMERATED)
+                                ^
+asn1c_C.c:1850:32: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_C.lo -MD -MP -MF .deps/asn1c_C.Tpo -c asn1c_C.c -o asn1c_C.o >/dev/null 2>&1
+mv -f .deps/asn1c_C.Tpo .deps/asn1c_C.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c -o asn1c_constraint.lo asn1c_constraint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c asn1c_constraint.c  -fPIC -DPIC -o .libs/asn1c_constraint.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_constraint.lo -MD -MP -MF .deps/asn1c_constraint.Tpo -c asn1c_constraint.c -o asn1c_constraint.o >/dev/null 2>&1
+mv -f .deps/asn1c_constraint.Tpo .deps/asn1c_constraint.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c -o asn1c_compat.lo asn1c_compat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c asn1c_compat.c  -fPIC -DPIC -o .libs/asn1c_compat.o
+asn1c_compat.c: In function ‘asn1c_open_file’:
+asn1c_compat.c:87:2: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
+  (void)ftruncate(fd, 0);
+  ^
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_compat.lo -MD -MP -MF .deps/asn1c_compat.Tpo -c asn1c_compat.c -o asn1c_compat.o >/dev/null 2>&1
+mv -f .deps/asn1c_compat.Tpo .deps/asn1c_compat.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1parser -I../libasn1fix   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c -o asn1c_fdeps.lo asn1c_fdeps.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c asn1c_fdeps.c  -fPIC -DPIC -o .libs/asn1c_fdeps.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../libasn1parser -I../libasn1fix -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c_fdeps.lo -MD -MP -MF .deps/asn1c_fdeps.Tpo -c asn1c_fdeps.c -o asn1c_fdeps.o >/dev/null 2>&1
+mv -f .deps/asn1c_fdeps.Tpo .deps/asn1c_fdeps.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -all-static  -o libasn1compiler.la  asn1compiler.lo asn1c_misc.lo asn1c_out.lo asn1c_lang.lo asn1c_save.lo asn1c_C.lo asn1c_constraint.lo asn1c_compat.lo asn1c_fdeps.lo  
+libtool: link: rm -fr  .libs/libasn1compiler.a .libs/libasn1compiler.la
+libtool: link: /usr/bin/ar cru .libs/libasn1compiler.a  asn1compiler.o asn1c_misc.o asn1c_out.o asn1c_lang.o asn1c_save.o asn1c_C.o asn1c_constraint.o asn1c_compat.o asn1c_fdeps.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libasn1compiler.a
+libtool: link: ( cd ".libs" && rm -f "libasn1compiler.la" && ln -s "../libasn1compiler.la" "libasn1compiler.la" )
+make[2]: Entering directory '/tmp/asn1c/libasn1compiler'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/libasn1compiler'
+make[1]: Leaving directory '/tmp/asn1c/libasn1compiler'
+Making install in skeletons
+make[1]: Entering directory '/tmp/asn1c/skeletons'
+Making install in .
+make[2]: Entering directory '/tmp/asn1c/skeletons'
+make[3]: Entering directory '/tmp/asn1c/skeletons'
+make[3]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/local/share/asn1c" || /bin/mkdir -p "/usr/local/share/asn1c"
+ /usr/bin/install -c -m 644 ./README ./ANY.c ./ANY.h ./asn_application.h ./asn_codecs.h ./asn_codecs_prim.c ./asn_codecs_prim.h ./asn_compare.h ./asn_internal.h ./asn_SEQUENCE_OF.c ./asn_SEQUENCE_OF.h ./asn_SET_OF.c ./asn_SET_OF.h ./asn_system.h ./ber_decoder.c ./ber_decoder.h ./ber_tlv_length.c ./ber_tlv_length.h ./ber_tlv_tag.c ./ber_tlv_tag.h ./BIT_STRING.c ./BIT_STRING.h ./BMPString.c ./BMPString.h ./BOOLEAN.c ./BOOLEAN.h ./compare.h ./constraints.c ./constraints.h ./constr_CHOICE.c ./constr_CHOICE.h ./constr_SEQUENCE.c ./constr_SEQUENCE.h ./constr_SEQUENCE_OF.c ./constr_SEQUENCE_OF.h ./constr_SET.c ./constr_SET.h ./constr_SET_OF.c ./constr_SET_OF.h ./constr_TYPE.c '/usr/local/share/asn1c'
+ /usr/bin/install -c -m 644 ./constr_TYPE.h ./converter-sample.c ./der_encoder.c ./der_encoder.h ./ENUMERATED.c ./ENUMERATED.h ./GeneralizedTime.c ./GeneralizedTime.h ./GeneralString.c ./GeneralString.h ./GraphicString.c ./GraphicString.h ./IA5String.c ./IA5String.h ./INTEGER.c ./INTEGER.h ./ISO646String.c ./ISO646String.h ./NativeEnumerated.c ./NativeEnumerated.h ./NativeInteger.c ./NativeInteger.h ./NativeReal.c ./NativeReal.h ./NULL.c ./NULL.h ./NumericString.c ./NumericString.h ./ObjectDescriptor.c ./ObjectDescriptor.h ./OBJECT_IDENTIFIER.c ./OBJECT_IDENTIFIER.h ./OCTET_STRING.c ./OCTET_STRING.h ./per_decoder.c ./per_decoder.h ./per_encoder.c ./per_encoder.h ./per_opentype.c ./per_opentype.h '/usr/local/share/asn1c'
+ /usr/bin/install -c -m 644 ./per_support.c ./per_support.h ./PrintableString.c ./PrintableString.h ./REAL.c ./REAL.h ./RELATIVE-OID.c ./RELATIVE-OID.h ./T61String.c ./T61String.h ./TeletexString.c ./TeletexString.h ./UniversalString.c ./UniversalString.h ./UTCTime.c ./UTCTime.h ./UTF8String.c ./UTF8String.h ./VideotexString.c ./VideotexString.h ./VisibleString.c ./VisibleString.h ./xer_decoder.c ./xer_decoder.h ./xer_encoder.c ./xer_encoder.h ./xer_support.c ./xer_support.h ./file-dependencies '/usr/local/share/asn1c'
+make[3]: Leaving directory '/tmp/asn1c/skeletons'
+make[2]: Leaving directory '/tmp/asn1c/skeletons'
+Making install in standard-modules
+make[2]: Entering directory '/tmp/asn1c/skeletons/standard-modules'
+make[3]: Entering directory '/tmp/asn1c/skeletons/standard-modules'
+make[3]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/local/share/asn1c/standard-modules" || /bin/mkdir -p "/usr/local/share/asn1c/standard-modules"
+ /usr/bin/install -c -m 644 ./ASN1C-UsefulInformationObjectClasses.asn1 ./ASN1-Object-Identifier-Module.asn1 ./README '/usr/local/share/asn1c/standard-modules'
+make[3]: Leaving directory '/tmp/asn1c/skeletons/standard-modules'
+make[2]: Leaving directory '/tmp/asn1c/skeletons/standard-modules'
+Making install in tests
+make[2]: Entering directory '/tmp/asn1c/skeletons/tests'
+make[3]: Entering directory '/tmp/asn1c/skeletons/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/asn1c/skeletons/tests'
+make[2]: Leaving directory '/tmp/asn1c/skeletons/tests'
+make[1]: Leaving directory '/tmp/asn1c/skeletons'
+Making install in examples
+make[1]: Entering directory '/tmp/asn1c/examples'
+make[2]: Entering directory '/tmp/asn1c/examples'
+test -z "/usr/local/bin" || /bin/mkdir -p "/usr/local/bin"
+ /usr/bin/install -c crfc2asn1.pl '/usr/local/bin'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/examples'
+make[1]: Leaving directory '/tmp/asn1c/examples'
+Making install in tests
+make[1]: Entering directory '/tmp/asn1c/tests'
+make[2]: Entering directory '/tmp/asn1c/tests'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/asn1c/tests'
+make[1]: Leaving directory '/tmp/asn1c/tests'
+Making install in doc
+make[1]: Entering directory '/tmp/asn1c/doc'
+Making install in docsrc
+make[2]: Entering directory '/tmp/asn1c/doc/docsrc'
+make[3]: Entering directory '/tmp/asn1c/doc/docsrc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/asn1c/doc/docsrc'
+make[2]: Leaving directory '/tmp/asn1c/doc/docsrc'
+make[2]: Entering directory '/tmp/asn1c/doc'
+make[3]: Entering directory '/tmp/asn1c/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/local/share/doc/asn1c" || /bin/mkdir -p "/usr/local/share/doc/asn1c"
+ /usr/bin/install -c -m 644 ./asn1c-quick.pdf ./asn1c-usage.pdf '/usr/local/share/doc/asn1c'
+make[3]: Leaving directory '/tmp/asn1c/doc'
+make[2]: Leaving directory '/tmp/asn1c/doc'
+make[1]: Leaving directory '/tmp/asn1c/doc'
+Making install in asn1c
+make[1]: Entering directory '/tmp/asn1c/asn1c'
+Making install in .
+make[2]: Entering directory '/tmp/asn1c/asn1c'
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT asn1c.o -MD -MP -MF .deps/asn1c.Tpo -c -o asn1c.o asn1c.c
+mv -f .deps/asn1c.Tpo .deps/asn1c.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o asn1c asn1c.o ../libasn1parser/libasn1parser.la ../libasn1print/libasn1print.la ../libasn1fix/libasn1fix.la ../libasn1compiler/libasn1compiler.la 
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o asn1c asn1c.o  ../libasn1parser/.libs/libasn1parser.a ../libasn1print/.libs/libasn1print.a ../libasn1fix/.libs/libasn1fix.a ../libasn1compiler/.libs/libasn1compiler.a
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT unber.o -MD -MP -MF .deps/unber.Tpo -c -o unber.o unber.c
+mv -f .deps/unber.Tpo .deps/unber.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o unber unber.o  
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o unber unber.o 
+gcc -DHAVE_CONFIG_H -I. -I..  -I../libasn1compiler -I../libasn1parser -I../libasn1print -I../libasn1fix -I../skeletons -DDATADIR=\"/usr/local/share/asn1c\"   -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -MT enber.o -MD -MP -MF .deps/enber.Tpo -c -o enber.o enber.c
+mv -f .deps/enber.Tpo .deps/enber.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations   -o enber enber.o  
+libtool: link: gcc -g -O2 -Wall -Wshadow -Wcast-qual -Wcast-align -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -o enber enber.o 
+make[3]: Entering directory '/tmp/asn1c/asn1c'
+test -z "/usr/local/bin" || /bin/mkdir -p "/usr/local/bin"
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c asn1c unber enber '/usr/local/bin'
+libtool: install: /usr/bin/install -c asn1c /usr/local/bin/asn1c
+libtool: install: /usr/bin/install -c unber /usr/local/bin/unber
+libtool: install: /usr/bin/install -c enber /usr/local/bin/enber
+test -z "/usr/local/share/man/man1" || /bin/mkdir -p "/usr/local/share/man/man1"
+ /usr/bin/install -c -m 644 asn1c.1 unber.1 enber.1 '/usr/local/share/man/man1'
+make[3]: Leaving directory '/tmp/asn1c/asn1c'
+make[2]: Leaving directory '/tmp/asn1c/asn1c'
+Making install in tests
+make[2]: Entering directory '/tmp/asn1c/asn1c/tests'
+make[3]: Entering directory '/tmp/asn1c/asn1c/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/asn1c/asn1c/tests'
+make[2]: Leaving directory '/tmp/asn1c/asn1c/tests'
+make[1]: Leaving directory '/tmp/asn1c/asn1c'
+make[1]: Entering directory '/tmp/asn1c'
+make[2]: Entering directory '/tmp/asn1c'
+make[2]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/local/share/doc/asn1c" || /bin/mkdir -p "/usr/local/share/doc/asn1c"
+ /usr/bin/install -c -m 644 README FAQ COPYING ChangeLog BUGS TODO '/usr/local/share/doc/asn1c'
+make[2]: Leaving directory '/tmp/asn1c'
+make[1]: Leaving directory '/tmp/asn1c'
+/home/andrey/openairinterface5g/cmake_targets

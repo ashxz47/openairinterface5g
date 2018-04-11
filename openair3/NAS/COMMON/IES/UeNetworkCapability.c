@@ -140,6 +140,37 @@ int encode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8
   return encoded;
 }
 
+
+int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len)
+{
+  uint8_t *lenPtr;
+  uint32_t encoded = 0;
+  /* Checking IEI and pointer */
+  CHECK_PDU_POINTER_AND_LENGTH_ENCODER(buffer, UE_NSSAI_MINIMUM_LENGTH, len);
+//#if defined (NAS_DEBUG)
+//  dump_ue_network_capability_xml(uenetworkcapability, iei);
+//#endif
+
+  if (iei > 0) {
+    *buffer = iei;
+    encoded++;
+  }
+
+  lenPtr  = (buffer + encoded);
+  encoded ++;
+  // *(buffer + encoded) = uereqnssai[0].snssai.sst;
+  *(buffer + encoded) = 47; //to check buffer SST
+  encoded++;
+  // *(buffer + encoded) = uereqnssai[0].snssai.sd;
+  *(buffer + encoded) = 48; //to check buffer SD
+  encoded++;
+  LOG_TRACE(INFO, "Requested NSSAI encoded NGS %u\n", encoded);
+
+  *lenPtr = encoded - 1 - ((iei > 0) ? 1 : 0);
+  return encoded;
+}
+
+
 void dump_ue_network_capability_xml(UeNetworkCapability *uenetworkcapability, uint8_t iei)
 {
   printf("<Ue Network Capability>\n");

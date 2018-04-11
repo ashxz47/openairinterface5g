@@ -138,6 +138,17 @@ typedef struct emm_as_security_s {
  * EMMAS primitive for connection establishment
  * --------------------------------------------
  */
+typedef struct as_snssai {
+  /* Single Network slice selection assistant information - S-NSSAI */
+  uint8_t sst; // slice/service type
+  uint8_t sd; //slice differentiator
+} as_snssai_t;
+
+typedef struct {
+  /* Network slice selection assistant information - NSSAI */
+  as_snssai_t snssai;
+} as_nssai_t;
+
 typedef struct emm_as_EPS_identity_s {
   const GUTI_t *guti; /* The GUTI, if valid               */
   const tai_t  *tai;  /* The last visited registered Tracking
@@ -172,6 +183,9 @@ typedef struct emm_as_establish_s {
   uint8_t NASinfo;    /* Type of initial NAS information to transfer   */
   OctetString NASmsg;     /* NAS message to be transfered within
                  * initial NAS information message   */
+/*NSSAI replayed*/
+  as_nssai_t as_nssai;
+                 
 } emm_as_establish_t;
 
 /*

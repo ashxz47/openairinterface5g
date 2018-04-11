@@ -149,7 +149,12 @@ void gen_usim_data(usim_data_conf_t *u, usim_data_t *usim_data,
 	usim_data->securityctx.algorithmID.type = USIM_INT_ENC_ALGORITHMS_TAG;
 	usim_data->securityctx.algorithmID.length = 1;
 	usim_data->securityctx.algorithmID.value[0] = SECURITY_ALGORITHMS;
-	/*
+	
+        /*NSSAI*/
+        usim_data->usim_nssai.snssai.sst = 1;
+        usim_data->usim_nssai.snssai.sd = 0;
+        
+        /*
 	 * Subcriber's Number
 	 */
 	usim_data->msisdn.length = 7;

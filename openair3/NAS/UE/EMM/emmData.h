@@ -130,7 +130,18 @@ typedef enum {
   EMM_KSI_MAPPED
 } emm_ksi_t;
 
-/* EPS NAS security context structure */
+typedef struct emm_snssai {
+  /* Single Network slice selection assistant information - S-NSSAI */
+  uint8_t sst; // slice/service type
+  uint8_t sd; //slice differentiator
+} emm_snssai_t;
+
+typedef struct {
+  /* Network slice selection assistant information - NSSAI */
+  emm_snssai_t snssai;
+} nssai_t;
+
+/* EPS NAS security context structure + nssai*/
 typedef struct emm_security_context_s {
   emm_ksi_t type;     /* Type of security context        */
   int eksi;           /* NAS key set identifier for E-UTRAN      */
@@ -156,7 +167,11 @@ typedef struct emm_security_context_s {
     uint8_t encryption:4;   /* algorithm used for ciphering           */
     uint8_t integrity:4;    /* algorithm used for integrity protection */
   } selected_algorithms;       /* MME selected algorithms                */
+  
+  nssai_t sec_nssai;
+  
 } emm_security_context_t;
+
 
 /*
  * --------------------------------------------------------------------------
@@ -350,6 +365,8 @@ typedef struct emm_data_s {
   Byte_t ExtendedAccessBarring;
   Byte_t Timer_T3245_Behaviour;
 
+  /*NSSAI*/
+  nssai_t nssai;
   /*
    * EMM data stored in the UE's memory
    * ----------------------------------

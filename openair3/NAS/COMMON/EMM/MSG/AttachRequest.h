@@ -44,6 +44,7 @@
 #include "AdditionalUpdateType.h"
 #include "GutiType.h"
 #include "VoiceDomainPreferenceAndUeUsageSetting.h"
+//#include "UeReqNssai.h"
 
 #ifndef ATTACH_REQUEST_H_
 #define ATTACH_REQUEST_H_
@@ -110,6 +111,7 @@ typedef enum attach_request_iei_tag {
   ATTACH_REQUEST_ADDITIONAL_UPDATE_TYPE_IEI                       = 0xF0, /* 0xF0 = 240 */
   ATTACH_REQUEST_OLD_GUTI_TYPE_IEI                                = 0xE0, /* 0xE0 = 224 */
   ATTACH_REQUEST_VOICE_DOMAIN_PREFERENCE_AND_UE_USAGE_SETTING_IEI = 0x5D, /* 0x5D = 93  */
+  ATTACH_REQUEST_NSSAI_IEI                                        = 0xF1, /* 0xF1 = 241 - temp. NSSAI presentation*/
 } attach_request_iei;
 
 /*
@@ -129,7 +131,7 @@ typedef struct attach_request_msg_tag {
   EpsMobileIdentity                       oldgutiorimsi;
   UeNetworkCapability                     uenetworkcapability;
   EsmMessageContainer                     esmmessagecontainer;
-  /* Optional fields */
+    /* Optional fields */
   uint32_t                                presencemask;
   PTmsiSignature                          oldptmsisignature;
   EpsMobileIdentity                       additionalguti;
@@ -145,6 +147,7 @@ typedef struct attach_request_msg_tag {
   GutiType                                oldgutitype;
   VoiceDomainPreferenceAndUeUsageSetting  voicedomainpreferenceandueusagesetting;
   MsNetworkFeatureSupport                 msnetworkfeaturesupport;
+  req_nssai_t                             uereqnssai[7]; //ReqNSSAI
 } attach_request_msg;
 
 int decode_attach_request(attach_request_msg *attachrequest, uint8_t *buffer, uint32_t len);

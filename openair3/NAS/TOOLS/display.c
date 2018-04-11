@@ -268,6 +268,12 @@ void display_usim_data(const char *filename) {
 			*(uint32_t*) data.securityctx.dlNAScount.value);
 	printf("\talgorithmID\t: 0x%.2x\n\n",
 			data.securityctx.algorithmID.value[0]);
+        
+        /*Print NSSAI data*/
+        printf("NSSAI data:\n");
+        printf("\tNSSAI SST\t: 0x%.2x\n", data.usim_nssai.snssai.sst);
+        printf("\tNSSAI SD\t: 0x%.2x\n\n", data.usim_nssai.snssai.sd);
+        
 
 	printf("MSISDN\t= %u%u%u %u%u%u%u %u%u%u%u\n\n",
 			data.msisdn.number.digit[0].msb, data.msisdn.number.digit[0].lsb,

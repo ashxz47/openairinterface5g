@@ -1,0 +1,4 @@
+Scanning dependencies of target ue_ip
+/home/andrey/openairinterface5g/openair2/NETWORK_DRIVER/UE_IP/netlink.c
+make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+Built target ue_ip

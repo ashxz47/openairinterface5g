@@ -1,0 +1,19 @@
+Scanning dependencies of target conf2uedata
+[  5%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf2uedata.c.o
+[ 17%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_emm.c.o
+[ 17%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_usim.c.o
+[ 23%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_user_data.c.o
+[ 29%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_network.c.o
+[ 35%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_user_plmn.c.o
+[ 41%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/conf_parser.c.o
+[ 47%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/fs.c.o
+[ 52%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/TOOLS/display.c.o
+[ 58%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USIM/usim_api.c.o
+[ 64%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USIM/aka_functions.c.o
+[ 70%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/memory.c.o
+[ 76%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/nas_log.c.o
+[ 82%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/OctetString.c.o
+[ 88%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/TLVEncoder.c.o
+[ 94%] Building C object CMakeFiles/conf2uedata.dir/home/andrey/openairinterface5g/common/utils/utils.c.o
+[100%] Linking C executable conf2uedata
+[100%] Built target conf2uedata

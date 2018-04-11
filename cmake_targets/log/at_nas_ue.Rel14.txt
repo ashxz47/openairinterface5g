@@ -1,0 +1,255 @@
+Scanning dependencies of target util
+Scanning dependencies of target api_user
+[  0%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/device.c.o
+[  1%] Building C object CMakeFiles/api_user.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USER/at_command.c.o
+Scanning dependencies of target esm
+Scanning dependencies of target ies
+[  2%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/DedicatedEpsBearerContextActivation.c.o
+[  3%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/memory.c.o
+[  4%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AccessPointName.c.o
+[  4%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/nas_log.c.o
+[  4%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/DefaultEpsBearerContextActivation.c.o
+[  4%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AdditionalUpdateResult.c.o
+[  4%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/nas_timer.c.o
+[  5%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/EpsBearerContextDeactivation.c.o
+[  5%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AdditionalUpdateType.c.o
+[  6%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ApnAggregateMaximumBitRate.c.o
+[  7%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/OctetString.c.o
+[  7%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AuthenticationFailureParameter.c.o
+[  7%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/esm_ebr.c.o
+[  7%] Building C object CMakeFiles/api_user.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USER/at_error.c.o
+[  7%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/parser.c.o
+[  8%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AuthenticationParameterAutn.c.o
+[  9%] Building C object CMakeFiles/api_user.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USER/at_response.c.o
+[ 10%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/TLVDecoder.c.o
+[ 11%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/esm_ebr_context.c.o
+[ 11%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AuthenticationParameterRand.c.o
+[ 12%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/AuthenticationResponseParameter.c.o
+[ 12%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/TLVEncoder.c.o
+[ 13%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/socket.c.o
+[ 13%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/CipheringKeySequenceNumber.c.o
+[ 13%] Building C object CMakeFiles/api_user.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USER/user_api.c.o
+[ 13%] Building C object CMakeFiles/util.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/UTIL/stty.c.o
+[ 13%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/Cli.c.o
+[ 13%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/esm_ip.c.o
+[ 14%] Linking C static library libutil.a
+[ 15%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/CsfbResponse.c.o
+[ 15%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/esm_main.c.o
+[ 15%] Built target util
+Scanning dependencies of target secu_cn
+[ 15%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/kdf.c.o
+[ 15%] Building C object CMakeFiles/api_user.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USER/user_indication.c.o
+[ 15%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/DaylightSavingTime.c.o
+[ 16%] Linking C static library libapi_user.a
+[ 17%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/rijndael.c.o
+[ 18%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/esm_pt.c.o
+[ 18%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/snow3g.c.o
+[ 18%] Built target api_user
+[ 19%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/DetachType.c.o
+Scanning dependencies of target api_usim
+[ 19%] Building C object CMakeFiles/api_usim.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USIM/aka_functions.c.o
+[ 19%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/DrxParameter.c.o
+[ 19%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/key_nas_deriver.c.o
+[ 19%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/EsmStatusHdl.c.o
+[ 20%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EmergencyNumberList.c.o
+[ 21%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/nas_stream_eea1.c.o
+[ 22%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/PdnConnectivity.c.o
+[ 22%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EmmCause.c.o
+[ 23%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsAttachResult.c.o
+[ 23%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/nas_stream_eia1.c.o
+[ 24%] Building C object CMakeFiles/api_usim.dir/home/andrey/openairinterface5g/openair3/NAS/UE/API/USIM/usim_api.c.o
+[ 24%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsAttachType.c.o
+[ 24%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsBearerContextStatus.c.o
+[ 25%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/nas_stream_eea2.c.o
+[ 25%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/PdnDisconnect.c.o
+[ 25%] Linking C static library libapi_usim.a
+[ 26%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsBearerIdentity.c.o
+[ 26%] Building C object CMakeFiles/secu_cn.dir/home/andrey/openairinterface5g/openair3/SECU/nas_stream_eia2.c.o
+[ 26%] Built target api_usim
+[ 26%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsMobileIdentity.c.o
+[ 27%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDedicatedEpsBearerContextAccept.c.o
+Scanning dependencies of target api_network
+[ 27%] Building C object CMakeFiles/api_network.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/API/NETWORK/as_message.c.o
+[ 27%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDedicatedEpsBearerContextReject.c.o
+[ 28%] Linking C static library libsecu_cn.a
+[ 28%] Building C object CMakeFiles/api_network.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/API/NETWORK/nas_message.c.o
+[ 28%] Built target secu_cn
+[ 29%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDedicatedEpsBearerContextRequest.c.o
+[ 30%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsNetworkFeatureSupport.c.o
+Scanning dependencies of target emm
+[ 30%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDefaultEpsBearerContextAccept.c.o
+[ 30%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsQualityOfService.c.o
+[ 30%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/Attach.c.o
+[ 30%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDefaultEpsBearerContextReject.c.o
+[ 31%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsUpdateResult.c.o
+[ 32%] Building C object CMakeFiles/api_network.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/API/NETWORK/network_api.c.o
+[ 33%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ActivateDefaultEpsBearerContextRequest.c.o
+[ 33%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EpsUpdateType.c.o
+[ 34%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/Authentication.c.o
+[ 34%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/BearerResourceAllocationReject.c.o
+[ 34%] Linking C static library libapi_network.a
+[ 35%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/BearerResourceAllocationRequest.c.o
+[ 35%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EsmCause.c.o
+[ 35%] Built target api_network
+[ 36%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EsmInformationTransferFlag.c.o
+[ 36%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/BearerResourceModificationReject.c.o
+[ 36%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/EsmMessageContainer.c.o
+[ 37%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/BearerResourceModificationRequest.c.o
+[ 38%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/GprsTimer.c.o
+[ 38%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/GutiType.c.o
+[ 39%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/IdentityType2.c.o
+[ 39%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/Detach.c.o
+[ 39%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/DeactivateEpsBearerContextAccept.c.o
+[ 40%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/KsiAndSequenceNumber.c.o
+[ 40%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ImeisvRequest.c.o
+[ 41%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/DeactivateEpsBearerContextRequest.c.o
+[ 41%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/emm_main.c.o
+[ 41%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/LcsClientIdentity.c.o
+[ 41%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/LcsIndicator.c.o
+[ 41%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/EsmInformationRequest.c.o
+[ 42%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/LinkedEpsBearerIdentity.c.o
+[ 42%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/LlcServiceAccessPointIdentifier.c.o
+[ 42%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/EsmInformationResponse.c.o
+[ 43%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/LocationAreaIdentification.c.o
+[ 43%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MessageType.c.o
+[ 44%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/esm_msg.c.o
+[ 45%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MobileIdentity.c.o
+[ 45%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MobileStationClassmark2.c.o
+[ 46%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/EmmStatusHdl.c.o
+[ 46%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/EsmStatus.c.o
+[ 47%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MobileStationClassmark3.c.o
+[ 47%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MsNetworkCapability.c.o
+[ 47%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/Identification.c.o
+[ 48%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ModifyEpsBearerContextAccept.c.o
+[ 48%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/MsNetworkFeatureSupport.c.o
+[ 49%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/NasKeySetIdentifier.c.o
+[ 49%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ModifyEpsBearerContextReject.c.o
+[ 50%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/IdleMode.c.o
+[ 50%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/NasMessageContainer.c.o
+[ 51%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/NasRequestType.c.o
+[ 52%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/ModifyEpsBearerContextRequest.c.o
+[ 52%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/PdnConnectivityReject.c.o
+[ 52%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/NasSecurityAlgorithms.c.o
+[ 53%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/NetworkName.c.o
+[ 53%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/PdnConnectivityRequest.c.o
+[ 54%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/PdnDisconnectReject.c.o
+[ 54%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/Nonce.c.o
+[ 54%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/PdnDisconnectRequest.c.o
+[ 54%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PacketFlowIdentifier.c.o
+[ 54%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/LowerLayer.c.o
+[ 55%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PagingIdentity.c.o
+[ 55%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PdnAddress.c.o
+[ 56%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/SAP/esm_recv.c.o
+[ 57%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PdnType.c.o
+[ 57%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PlmnList.c.o
+[ 58%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SecurityModeControl.c.o
+[ 59%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ProcedureTransactionIdentity.c.o
+[ 59%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ProtocolConfigurationOptions.c.o
+[ 59%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/ServiceRequestHdl.c.o
+[ 59%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/SAP/esm_sap.c.o
+[ 60%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/TrackingAreaUpdate.c.o
+[ 60%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/emm_msg.c.o
+[ 61%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ProtocolDiscriminator.c.o
+[ 61%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachAccept.c.o
+[ 61%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/PTmsiSignature.c.o
+[ 61%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/QualityOfService.c.o
+[ 62%] Building C object CMakeFiles/esm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/SAP/esm_send.c.o
+[ 63%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachComplete.c.o
+[ 63%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachReject.c.o
+[ 64%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/RadioPriority.c.o
+[ 65%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.c.o
+[ 65%] Linking C static library libesm.a
+[ 65%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AuthenticationFailure.c.o
+/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.c: In function ‘encode_attach_request’:
+/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.c:494:30: warning: passing argument 1 of ‘encode_ue_req_nssai’ from incompatible pointer type [-Wincompatible-pointer-types]
+          encode_ue_req_nssai(&attach_request->uereqnssai, ATTACH_REQUEST_NSSAI_IEI,
+                              ^
+In file included from /home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.h:32:0,
+                 from /home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.c:31:
+/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeNetworkCapability.h:118:5: note: expected ‘req_nssai_t * {aka struct <anonymous> *}’ but argument is of type ‘req_nssai_t (*)[7] {aka struct <anonymous> (*)[7]}’
+ int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len);
+     ^
+[ 65%] Built target esm
+[ 65%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/SecurityHeaderType.c.o
+[ 66%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ServiceType.c.o
+[ 67%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/ShortMac.c.o
+[ 67%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AuthenticationReject.c.o
+[ 68%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/SsCode.c.o
+[ 68%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AuthenticationRequest.c.o
+[ 68%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/SupportedCodecList.c.o
+[ 68%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AuthenticationResponse.c.o
+[ 68%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TimeZoneAndTime.c.o
+[ 69%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/CsServiceNotification.c.o
+[ 69%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/DetachAccept.c.o
+[ 70%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/DetachRequest.c.o
+[ 71%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/DownlinkNasTransport.c.o
+[ 71%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TimeZone.c.o
+[ 72%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/EmmInformation.c.o
+[ 72%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/EmmStatus.c.o
+[ 72%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TmsiStatus.c.o
+[ 73%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/ExtendedServiceRequest.c.o
+[ 73%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/GutiReallocationCommand.c.o
+[ 73%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/GutiReallocationComplete.c.o
+[ 74%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TrackingAreaIdentity.c.o
+[ 75%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/IdentityRequest.c.o
+[ 75%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/IdentityResponse.c.o
+[ 76%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/SecurityModeCommand.c.o
+[ 76%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/SecurityModeComplete.c.o
+[ 76%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TrackingAreaIdentityList.c.o
+[ 77%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/SecurityModeReject.c.o
+[ 77%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/ServiceReject.c.o
+[ 78%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/ServiceRequest.c.o
+[ 78%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/TrackingAreaUpdateAccept.c.o
+[ 79%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TrafficFlowAggregateDescription.c.o
+[ 79%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TrafficFlowTemplate.c.o
+[ 79%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/TrackingAreaUpdateComplete.c.o
+[ 80%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/TrackingAreaUpdateReject.c.o
+[ 80%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/TrackingAreaUpdateRequest.c.o
+[ 81%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/UplinkNasTransport.c.o
+[ 81%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_as.c.o
+[ 82%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredAttachNeeded.c.o
+[ 82%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredAttemptingToAttach.c.o
+[ 82%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregistered.c.o
+[ 83%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/TransactionIdentifier.c.o
+[ 84%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredInitiated.c.o
+[ 84%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeNetworkCapability.c.o
+[ 84%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredLimitedService.c.o
+[ 85%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredNoCellAvailable.c.o
+[ 85%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredNoImsi.c.o
+[ 86%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredNormalService.c.o
+[ 86%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredPlmnSearch.c.o
+[ 86%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeRadioCapabilityInformationUpdateNeeded.c.o
+[ 87%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_esm.c.o
+[ 87%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_fsm.c.o
+[ 87%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmNull.c.o
+[ 88%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeSecurityCapability.c.o
+[ 89%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_recv.c.o
+[ 89%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_reg.c.o
+[ 90%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredAttemptingToUpdate.c.o
+[ 90%] Building C object CMakeFiles/ies.dir/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/VoiceDomainPreferenceAndUeUsageSetting.c.o
+[ 90%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegistered.c.o
+[ 91%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredImsiDetachInitiated.c.o
+[ 92%] Linking C static library libies.a
+[ 92%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredInitiated.c.o
+[ 92%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredLimitedService.c.o
+[ 92%] Built target ies
+[ 93%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredNoCellAvailable.c.o
+[ 93%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredNormalService.c.o
+[ 94%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredPlmnSearch.c.o
+[ 94%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmRegisteredUpdateNeeded.c.o
+[ 95%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_sap.c.o
+[ 95%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_send.c.o
+[ 96%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmServiceRequestInitiated.c.o
+[ 96%] Building C object CMakeFiles/emm.dir/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmTrackingAreaUpdatingInitiated.c.o
+[ 96%] Linking C static library libemm.a
+[ 96%] Built target emm
+Scanning dependencies of target at_nas_ue
+[ 96%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/openair3/NAS/UE/nas_network.c.o
+[ 98%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/openair3/NAS/UE/nas_parser.c.o
+[ 98%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/openair3/NAS/UE/UEprocess.c.o
+[ 98%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/openair3/NAS/UE/nas_proc.c.o
+[ 98%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/openair3/NAS/UE/nas_user.c.o
+[ 99%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/common/utils/utils.c.o
+[ 99%] Building C object CMakeFiles/at_nas_ue.dir/home/andrey/openairinterface5g/common/utils/system.c.o
+[100%] Linking C executable at_nas_ue
+[100%] Built target at_nas_ue
