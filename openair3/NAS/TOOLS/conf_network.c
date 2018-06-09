@@ -96,7 +96,7 @@ bool parse_plmns(config_setting_t *all_plmn_setting, networks_t *networks) {
 		sprintf(plmn, "%s%d", PLMN, i);
 		plmn_setting = config_setting_get_member(all_plmn_setting, plmn);
 		if (plmn_setting == NULL) {
-			printf("PLMN%d not fouund\n", i);
+			printf("PLMN%d not found\n", i);
 			return false;
 		}
 

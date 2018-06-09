@@ -13,10 +13,11 @@ bool parse_config_file(const char *output_dir, const char *conf_filename, int ou
     config_setting_t *root_setting = NULL;
     config_setting_t *ue_setting = NULL;
     config_setting_t *all_plmn_setting = NULL;
+    // config_setting_t *nssai_setting = NULL;
     char user[10];
     config_t cfg;
 
-	networks_t networks;;
+	networks_t networks;
 
     ret = get_config_from_file(conf_filename, &cfg);
     if (ret == false) {
@@ -36,6 +37,8 @@ bool parse_config_file(const char *output_dir, const char *conf_filename, int ou
         return false;
     }
 
+   
+
     for (int i = 0; i < ue_nb; i++) {
 	    emm_nvdata_t emm_data;
 
@@ -47,10 +50,15 @@ bool parse_config_file(const char *output_dir, const char *conf_filename, int ou
 
 		user_plmns_t user_plmns;
 
+        // all_ue_snssai_t ue_nssai;
+        config_setting_t *all_nssai_setting = NULL;
+
         sprintf(user, "%s%d", UE, i);
 
         ue_setting = config_setting_get_member(root_setting, user);
-        if (ue_setting == NULL) {
+        
+        if (ue_setting == NULL)
+        {
             printf("Check UE%d settings\n", i);
             return false;
         }
@@ -64,6 +72,19 @@ bool parse_config_file(const char *output_dir, const char *conf_filename, int ou
             printf("Problem in USER section for UE%d. EXITING...\n", i);
             return false;
         }
+
+        //NSSAI
+        all_nssai_setting = config_setting_get_member(ue_setting, NSSAI);
+        if (all_nssai_setting == NULL)
+        {
+            printf("NO NSSAI SECTION...EXITING...\n");
+            return (false);
+        }
+        if (parse_nssai(all_nssai_setting, i, &user_data_conf) == false)
+        {
+            return false;
+        }
+
         gen_user_data(&user_data_conf, &user_data);
 
         rc = parse_ue_sim_param(ue_setting, i, &usim_data_conf);

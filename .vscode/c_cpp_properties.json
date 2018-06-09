@@ -13,7 +13,8 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceRoot}"
+                    "${workspaceRoot}",
+                    "/home/andrey/openairinterface5G"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -43,7 +44,18 @@
                 "${workspaceRoot}/openair3/NAS/UE",
                 "${workspaceRoot}/openair3/NAS/UE/ESM",
                 "${workspaceRoot}/openair3/NAS/COMMON",
-                "${workspaceRoot}/openair3/NAS/UE/API/USER"
+                "${workspaceRoot}/openair3/NAS/UE/API/USER",
+                "${workspaceFolder}/common/utils/collection",
+                "${workspaceFolder}/openair3/SCTP",
+                "${workspaceFolder}/common/utils/itti",
+                "${workspaceFolder}/openair1",
+                "${workspaceFolder}/openair2/RRC/LITE",
+                "${workspaceFolder}/openair2/RRC/LITE",
+                "${workspaceFolder}/cmake_targets/lte_build_oai/build/CMakeFiles/R10.5",
+                "${workspaceFolder}/cmake_targets/oaisim_build_oai/build/CMakeFiles/R10.5",
+                "${workspaceFolder}/openair3/UTILS",
+                "${workspaceFolder}/common/utils/msc",
+                "${workspaceFolder}/openair3/NAS/UE/API/USIM"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -88,5 +100,5 @@
             }
         }
     ],
-    "version": 3
+    "version": 4
 }

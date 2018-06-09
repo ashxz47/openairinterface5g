@@ -144,16 +144,16 @@ typedef struct {
 } usim_sqn_data_t;
 
 
-typedef struct snssai {
-  /* Single Network slice selection assistant information - S-NSSAI */
-  uint8_t sst; // slice/service type
-  uint8_t sd; //slice differentiator
-} snssai_t;
+// typedef struct snssai {
+//   /* Single Network slice selection assistant information - S-NSSAI */
+//   uint8_t sst; // slice/service type
+//   uint8_t sd; //slice differentiator
+// } snssai_t;
 
-typedef struct {
-  /* Network slice selection assistant information - NSSAI */
-  snssai_t snssai;
-} usim_nssai_t;
+// typedef struct {
+//   /* Network slice selection assistant information - NSSAI */
+//   snssai_t snssai;
+// } usim_nssai_t;
 
 
 
@@ -380,7 +380,7 @@ typedef struct {
   uint8_t usimtestmode;
   usim_sqn_data_t usim_sqn_data;
   /* usim NSSAI */
-  usim_nssai_t usim_nssai;
+  // usim_nssai_t usim_nssai;
   
 } usim_data_t;
 

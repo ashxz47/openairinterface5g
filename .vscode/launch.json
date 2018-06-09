@@ -5,6 +5,28 @@
     "version": "0.2.0",
     "configurations": [
 
+{
+    "name": "(gdb) SIM",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/conf2uedata",
+    "args": [
+        "-c", "UE1.conf", "-o", "."
+    ],
+    "stopAtEntry": false,
+    "cwd": "/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/",
+    "environment": [],
+    "externalConsole": true,
+    "MIMode": "gdb",
+    "setupCommands": [
+        {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+        }
+        
+    ]
+},
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
@@ -12,7 +34,7 @@
             "program": "/home/andrey/openairinterface5g/targets/bin/oaisim.Rel14",
             "args": [
                 "--enb-conf", "/home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf",
-                "-s15", "-AAWGN", "-y1", "-b1", "-u1", "-Q0"
+                "-s15", "-AAWGN", "-y1", "-b1", "-u2", "-Q0"
 
             ],
             "stopAtEntry": false,

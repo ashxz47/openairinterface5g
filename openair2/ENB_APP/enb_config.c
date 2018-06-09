@@ -174,6 +174,7 @@
 #define ENB_CONFIG_STRING_SRB1_POLL_BYTE                                "poll_byte"
 #define ENB_CONFIG_STRING_SRB1_MAX_RETX_THRESHOLD                       "max_retx_threshold"
 #define ENB_CONFIG_STRING_MME_IP_ADDRESS                "mme_ip_address"
+//#define ENB_CONFIG_STRING_MME_IP_ADDRESS_1                "mme_ip_address_1" //additional mme_ip_address
 #define ENB_CONFIG_STRING_MME_IPV4_ADDRESS              "ipv4"
 #define ENB_CONFIG_STRING_MME_IPV6_ADDRESS              "ipv6"
 #define ENB_CONFIG_STRING_MME_IP_ADDRESS_ACTIVE         "active"
@@ -530,7 +531,7 @@ extern int asn1_xer_print;
 #else
 #define libconfig_int int
 #endif
-const Enb_properties_array_t *enb_config_init(char* lib_config_file_name_pP)
+const Enb_properties_array_t *enb_config_init(char* lib_config_file_name_pP) //read config file
 {
   config_t          cfg;
   config_setting_t *setting                       = NULL;

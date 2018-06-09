@@ -247,6 +247,20 @@ typedef struct {
   uint8_t MMEcode;    /* MME code     */
 } gummei_t;
 
+// /*
+//  * NSSAI
+//  */
+// typedef struct {
+// uint8_t sst; //Slice Selection Type
+// uint8_t sd; //Slice Differentiator
+// } snssai_t;
+
+// typedef struct {
+// snssai_t snssai;
+// } nssai_t;
+
+
+
 /*
  * EPS Globally Unique Temporary UE Identity
  */

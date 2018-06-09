@@ -383,15 +383,15 @@ void emm_main_initialize(nas_user_t *user, emm_indication_callback_t cb, const c
       
       
       /* NSSAI data from USIM to emm*/
-      user->emm_data->nssai.snssai.sst = user->usim_data.usim_nssai.snssai.sst;
-      user->emm_data->nssai.snssai.sd = user->usim_data.usim_nssai.snssai.sd;
+      // user->emm_data->nssai.snssai.sst = user->usim_data.usim_nssai.snssai.sst;
+      // user->emm_data->nssai.snssai.sd = user->usim_data.usim_nssai.snssai.sd;
   
       /*
        nssai pushed with help of sec. fields
        because only sec. data is transfered to the NAS message.
-       */
-      user->emm_data->security->sec_nssai.snssai.sst = user->usim_data.usim_nssai.snssai.sst; 
-      user->emm_data->security->sec_nssai.snssai.sd = user->usim_data.usim_nssai.snssai.sd;  
+      //  */
+      // user->emm_data->security->sec_nssai.snssai.sst = user->usim_data.usim_nssai.snssai.sst; 
+      // user->emm_data->security->sec_nssai.snssai.sd = user->usim_data.usim_nssai.snssai.sd;  
       
     } else {
       LOG_TRACE(WARNING,

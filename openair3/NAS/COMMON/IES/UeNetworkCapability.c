@@ -158,11 +158,12 @@ int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, u
 
   lenPtr  = (buffer + encoded);
   encoded ++;
+   // TODO cycle to fill all 8 s-nssai
   // *(buffer + encoded) = uereqnssai[0].snssai.sst;
-  *(buffer + encoded) = 47; //to check buffer SST
+  *(buffer + encoded) = 50; //to check buffer SST
   encoded++;
   // *(buffer + encoded) = uereqnssai[0].snssai.sd;
-  *(buffer + encoded) = 48; //to check buffer SD
+  *(buffer + encoded) = 51; //to check buffer SD
   encoded++;
   LOG_TRACE(INFO, "Requested NSSAI encoded NGS %u\n", encoded);
 

@@ -39,6 +39,61 @@ int parse_ue_user_data(config_setting_t *ue_setting, int user_id, user_data_conf
 	return true;
 }
 
+int parse_nssai(config_setting_t *all_nssai_setting, int user_id, user_data_conf_t *ue_nssai) {
+	config_setting_t *nssai_setting = NULL;
+	all_ue_snssai_t *nssai = &ue_nssai->ue_nssai;
+	// config_setting_t *snssai_setting = NULL;
+	
+	char snssai[10];
+	int snssai_nb = 0;
+
+	snssai_nb = config_setting_length(all_nssai_setting);
+
+	nssai->size = snssai_nb;
+	for (int i = 0; i < snssai_nb; i++) {
+	// nssai->items[i] = malloc(sizeof(snssai_t) * snssai_nb);
+	memset(&nssai->items[i], 0, sizeof(snssai_t));
+	}
+	// for (int i = 0; i < snssai_nb; i++) {
+	// 	memset(&nssai->items[i].record, 0xff, sizeof(network_record_t));
+	// }
+
+	for (int i = 0; i < snssai_nb; i++)
+	{
+		snssai_t *ue_snssai = &nssai->items[i];
+		sprintf(snssai, "%s%d", SNSSAI, i);
+
+		nssai_setting = config_setting_get_member(all_nssai_setting, snssai);
+		if (nssai_setting == NULL)
+		{
+			printf("Check SNSSAI section of UE%d. EXITING...\n", user_id);
+			return false;
+		}
+
+		int rc = 0;
+		rc = config_setting_lookup_string(nssai_setting, SST, &ue_snssai->sst);
+		if (rc != 1)
+		{
+			printf("Error on SST\n");
+			return false;
+		}
+		rc = config_setting_lookup_string(nssai_setting, SD, &ue_snssai->sd);
+		if (rc != 1)
+		{
+			printf("Error on SD\n");
+			return false;
+		}
+	}
+	for (int i = (0 + snssai_nb); i < 8; i++)
+	{
+		nssai->items[i].sst = "-1";
+		nssai->items[i].sd = "-1";
+	}
+	return true;
+}
+
+
+
 void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 	memset(user_data, 0, sizeof(user_nvdata_t));
 	snprintf(user_data->IMEI, USER_IMEI_SIZE + 1, "%s%d", u->imei, _luhn(u->imei));
@@ -54,6 +109,12 @@ void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 	 * SIM Personal Identification Number
 	 */
 	strncpy(user_data->PIN, u->pin, USER_PIN_SIZE);
+	//NSSAI
+	for (int i = 0; i < u->ue_nssai.size; i++)
+	{
+	strncpy(user_data->nv_nssai.items[i].sst, u->ue_nssai.items[i].sst, SST_SIZE);
+	strncpy(user_data->nv_nssai.items[i].sd, u->ue_nssai.items[i].sd, SD_SIZE);
+	}
 }
 
 bool write_user_data(const char *directory, int user_id, user_nvdata_t *data) {

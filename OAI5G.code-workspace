@@ -5,6 +5,19 @@
 		}
 	],
 	"settings": {
-		"git.ignoreLimitWarning": true
+		"git.ignoreLimitWarning": true,
+		"files.associations": {
+			"system_error": "c",
+			"array": "cpp",
+			"string_view": "cpp",
+			"conf_network.h": "c",
+			"conf_user_data.h": "c",
+			"bitset": "c",
+			"initializer_list": "c",
+			"utility": "c",
+			"valarray": "c",
+			"future": "cpp",
+			"ratio": "c"
+		}
 	}
 }

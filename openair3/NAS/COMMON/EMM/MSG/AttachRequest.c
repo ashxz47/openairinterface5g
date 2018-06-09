@@ -491,7 +491,7 @@ int encode_attach_request(attach_request_msg *attach_request, uint8_t *buffer, u
   }
 
   if ((encode_result =
-         encode_ue_req_nssai(&attach_request->uereqnssai, ATTACH_REQUEST_NSSAI_IEI,
+         encode_ue_req_nssai(&attach_request->uereqnssai, ATTACH_REQUEST_NSSAI_IEI,     //NSSAI encode
                                       buffer + encoded, len - encoded)) < 0)        //Return in case of error
     return encode_result;
   else

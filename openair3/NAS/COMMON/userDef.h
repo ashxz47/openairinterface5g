@@ -65,6 +65,21 @@ Description Contains user's global definitions
  * Structure of the UE parameters
  * ------------------------------
  */
+ /*
+ * NSSAI
+ */
+typedef struct {
+  #define SST_SIZE          4
+	char sst[4];
+  #define SD_SIZE          4
+	char sd[4];
+} nv_snssai_t;
+
+typedef struct {
+    nv_snssai_t items[8];
+} nv_nssai_t; //all snssai per UE
+
+
 typedef struct {
   /* International Mobile Equipment Identity  */
 #define USER_IMEI_SIZE          15
@@ -78,6 +93,9 @@ typedef struct {
   /* SIM Personal Identification Number   */
 #define USER_PIN_SIZE           4
   char PIN[USER_PIN_SIZE+1];
+  
+
+  nv_nssai_t nv_nssai;
 } user_nvdata_t;
 
 /****************************************************************************/

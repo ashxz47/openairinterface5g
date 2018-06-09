@@ -229,7 +229,12 @@ static uint32_t eNB_app_register(uint32_t enb_id_start, uint32_t enb_id_end, con
       s1ap_register_eNB->mnc_digit_length = enb_properties->properties[enb_id]->mnc_digit_length;
       s1ap_register_eNB->default_drx      = enb_properties->properties[enb_id]->pcch_defaultPagingCycle[0];
 
+      //input for NSSAI
+      //msg_p.ittiMsg.nas_dl_emm_plain_msg.choice.attach_request.uereqnssai.snssai.sst = 45;
+      //end of input for NSSAI
+
       s1ap_register_eNB->nb_mme =         enb_properties->properties[enb_id]->nb_mme;
+      // s1ap_register_eNB->nb_mme = 1;
       AssertFatal (s1ap_register_eNB->nb_mme <= S1AP_MAX_NB_MME_IP_ADDRESS, "Too many MME for eNB %d (%d/%d)!", enb_id, s1ap_register_eNB->nb_mme,
                    S1AP_MAX_NB_MME_IP_ADDRESS);
 

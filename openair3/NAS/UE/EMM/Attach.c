@@ -225,8 +225,8 @@ int emm_proc_attach(nas_user_t *user, emm_proc_attach_type_t type)
 
   /* Setup NSSAI data */
   
-  emm_as->as_nssai.snssai.sst = user->emm_data->nssai.snssai.sst;
-  emm_as->as_nssai.snssai.sd = user->emm_data->nssai.snssai.sd;
+  // emm_as->as_nssai.snssai.sst = user->emm_data->nssai.snssai.sst;
+  // emm_as->as_nssai.snssai.sd = user->emm_data->nssai.snssai.sd;
   /*
    * Notify ESM that initiation of a PDN connectivity procedure
    * is requested to setup a default EPS bearer
