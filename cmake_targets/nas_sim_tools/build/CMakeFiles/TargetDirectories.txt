@@ -1,5 +1,0 @@
-/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/build/CMakeFiles/edit_cache.dir
-/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/build/CMakeFiles/conf2uedata.dir
-/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/build/CMakeFiles/usim.dir
-/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/build/CMakeFiles/nvram.dir
-/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/build/CMakeFiles/rebuild_cache.dir
