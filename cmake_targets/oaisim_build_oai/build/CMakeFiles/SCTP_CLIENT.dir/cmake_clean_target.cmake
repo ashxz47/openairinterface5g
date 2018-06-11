@@ -1,3 +1,0 @@
-file(REMOVE_RECURSE
-  "libSCTP_CLIENT.a"
-)
