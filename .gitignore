@@ -1,0 +1,4 @@
+/cmake_targets/at_commands/build/*
+/cmake_targets/log/*
+/cmake_targets/lte_build_oai/build/*
+/cmake_targets/oaisim_build_oai/build/*
