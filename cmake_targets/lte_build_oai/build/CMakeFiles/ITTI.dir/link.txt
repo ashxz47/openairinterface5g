@@ -1,2 +1,0 @@
-/usr/bin/ar qc libITTI.a  CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/intertask_interface.c.o CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/intertask_interface_dump.c.o CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/backtrace.c.o CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/memory_pools.c.o CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/signals.c.o CMakeFiles/ITTI.dir/home/andrey/openairinterface5g/common/utils/itti/timer.c.o
-/usr/bin/ranlib libITTI.a
