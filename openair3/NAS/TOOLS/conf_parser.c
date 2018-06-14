@@ -75,16 +75,19 @@ bool parse_config_file(const char *output_dir, const char *conf_filename, int ou
 
         //NSSAI
         all_nssai_setting = config_setting_get_member(ue_setting, NSSAI);
-        if (all_nssai_setting == NULL)
+        if (all_nssai_setting != NULL)
         {
-            printf("NO NSSAI SECTION...EXITING...\n");
-            return (false);
+            if (parse_nssai(all_nssai_setting, i, &user_data_conf) == false)
+            {
+                return false;
+            }
         }
-        if (parse_nssai(all_nssai_setting, i, &user_data_conf) == false)
+        else
         {
-            return false;
+            user_data_conf.ue_nssai.size = -1;
+            printf("WARNING: NO NSSAI SECTION FOR UE_%d\n", i);
         }
-
+        
         gen_user_data(&user_data_conf, &user_data);
 
         rc = parse_ue_sim_param(ue_setting, i, &usim_data_conf);

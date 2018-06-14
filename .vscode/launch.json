@@ -9,12 +9,13 @@
     "name": "(gdb) SIM",
     "type": "cppdbg",
     "request": "launch",
-    "program": "/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/conf2uedata",
+   // "program": "/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/conf2uedata",
+   "program": "/home/andrey/openairinterface5g/targets/bin/conf2uedata",
     "args": [
         "-c", "UE1.conf", "-o", "."
     ],
     "stopAtEntry": false,
-    "cwd": "/home/andrey/openairinterface5g/cmake_targets/nas_sim_tools/",
+    "cwd": "/home/andrey/openairinterface5g/targets/bin/",
     "environment": [],
     "externalConsole": true,
     "MIMode": "gdb",

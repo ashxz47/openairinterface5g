@@ -39,24 +39,21 @@ int parse_ue_user_data(config_setting_t *ue_setting, int user_id, user_data_conf
 	return true;
 }
 
-int parse_nssai(config_setting_t *all_nssai_setting, int user_id, user_data_conf_t *ue_nssai) {
+int parse_nssai(config_setting_t *all_nssai_setting, int user_id, user_data_conf_t *ue_nssai)
+{
 	config_setting_t *nssai_setting = NULL;
 	all_ue_snssai_t *nssai = &ue_nssai->ue_nssai;
-	// config_setting_t *snssai_setting = NULL;
-	
 	char snssai[10];
 	int snssai_nb = 0;
 
 	snssai_nb = config_setting_length(all_nssai_setting);
 
 	nssai->size = snssai_nb;
-	for (int i = 0; i < snssai_nb; i++) {
-	// nssai->items[i] = malloc(sizeof(snssai_t) * snssai_nb);
-	memset(&nssai->items[i], 0, sizeof(snssai_t));
+	for (int i = 0; i < snssai_nb; i++)
+	{
+		// nssai->items[i] = malloc(sizeof(snssai_t) * snssai_nb);
+		memset(&nssai->items[i], 0, sizeof(snssai_t));
 	}
-	// for (int i = 0; i < snssai_nb; i++) {
-	// 	memset(&nssai->items[i].record, 0xff, sizeof(network_record_t));
-	// }
 
 	for (int i = 0; i < snssai_nb; i++)
 	{
@@ -110,10 +107,13 @@ void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 	 */
 	strncpy(user_data->PIN, u->pin, USER_PIN_SIZE);
 	//NSSAI
-	for (int i = 0; i < u->ue_nssai.size; i++)
+	if (u->ue_nssai.size >= 0)
 	{
-	strncpy(user_data->nv_nssai.items[i].sst, u->ue_nssai.items[i].sst, SST_SIZE);
-	strncpy(user_data->nv_nssai.items[i].sd, u->ue_nssai.items[i].sd, SD_SIZE);
+		for (int i = 0; i < u->ue_nssai.size; i++)
+		{
+			strncpy(user_data->nv_nssai.items[i].sst, u->ue_nssai.items[i].sst, SST_SIZE);
+			strncpy(user_data->nv_nssai.items[i].sd, u->ue_nssai.items[i].sd, SD_SIZE);
+		}
 	}
 }
 
