@@ -13,7 +13,7 @@
    "program": "/home/andrey/openairinterface5g/targets/bin/conf2uedata",
     "args": [
         "-c", "UE1.conf", "-o", "."
-    ],
+    ], 
     "stopAtEntry": false,
     "cwd": "/home/andrey/openairinterface5g/targets/bin/",
     "environment": [],
