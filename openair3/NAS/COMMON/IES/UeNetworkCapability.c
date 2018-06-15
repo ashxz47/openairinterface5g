@@ -141,7 +141,7 @@ int encode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8
 }
 
 
-int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len)
+int encode_ue_req_nssai(Req_Nssai *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len)
 {
   uint8_t *lenPtr;
   uint32_t encoded = 0;
@@ -160,7 +160,7 @@ int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, u
   encoded ++;
    // TODO cycle to fill all 8 s-nssai
   // *(buffer + encoded) = uereqnssai[0].snssai.sst;
-  *(buffer + encoded) = 50; //to check buffer SST
+  *(buffer + encoded) = &uereqnssai->snssai[0]; //to check buffer SST
   encoded++;
   // *(buffer + encoded) = uereqnssai[0].snssai.sd;
   *(buffer + encoded) = 51; //to check buffer SD

@@ -69,10 +69,8 @@ Description Contains user's global definitions
  * NSSAI
  */
 typedef struct {
-  #define SST_SIZE          4
-	char sst[4];
-  #define SD_SIZE          4
-	char sd[4];
+	uint8_t sst;
+	uint8_t sd;
 } nv_snssai_t;
 
 typedef struct {
@@ -94,7 +92,6 @@ typedef struct {
 #define USER_PIN_SIZE           4
   char PIN[USER_PIN_SIZE+1];
   
-
   nv_nssai_t nv_nssai;
 } user_nvdata_t;
 

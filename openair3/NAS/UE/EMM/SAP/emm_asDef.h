@@ -145,8 +145,8 @@ typedef struct as_snssai {
 } as_snssai_t;
 
 typedef struct {
-  /* Network slice selection assistant information - NSSAI */
-  as_snssai_t snssai;
+  /* AS_NSSAI */
+  as_snssai_t snssai[8];
 } as_nssai_t;
 
 typedef struct emm_as_EPS_identity_s {

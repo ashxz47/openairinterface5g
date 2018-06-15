@@ -81,11 +81,6 @@ int parse_nssai(config_setting_t *all_nssai_setting, int user_id, user_data_conf
 			return false;
 		}
 	}
-	for (int i = (0 + snssai_nb); i < 8; i++)
-	{
-		nssai->items[i].sst = "-1";
-		nssai->items[i].sd = "-1";
-	}
 	return true;
 }
 
@@ -111,8 +106,8 @@ void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 	{
 		for (int i = 0; i < u->ue_nssai.size; i++)
 		{
-			strncpy(user_data->nv_nssai.items[i].sst, u->ue_nssai.items[i].sst, SST_SIZE);
-			strncpy(user_data->nv_nssai.items[i].sd, u->ue_nssai.items[i].sd, SD_SIZE);
+			user_data->nv_nssai.items[i].sst = atoi(u->ue_nssai.items[i].sst);
+			user_data->nv_nssai.items[i].sd = atoi(u->ue_nssai.items[i].sd);
 		}
 	}
 }

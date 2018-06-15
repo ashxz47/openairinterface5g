@@ -20,8 +20,8 @@
 
 
 typedef struct {
-	const char *sst;
-	const char *sd;
+	const char* sst;
+	const char* sd;
 } snssai_t;
 
 typedef struct {

@@ -147,7 +147,7 @@ typedef struct attach_request_msg_tag {
   GutiType                                oldgutitype;
   VoiceDomainPreferenceAndUeUsageSetting  voicedomainpreferenceandueusagesetting;
   MsNetworkFeatureSupport                 msnetworkfeaturesupport;
-  req_nssai_t                             uereqnssai[8]; //ReqNSSAI
+  Req_Nssai                               uereqnssai[8]; //ReqNSSAI
 } attach_request_msg;
 
 int decode_attach_request(attach_request_msg *attachrequest, uint8_t *buffer, uint32_t len);

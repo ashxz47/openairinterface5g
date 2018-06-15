@@ -101,7 +101,7 @@ typedef struct UeNetworkCapability_tag {
 #define UE_NSSAI_MINIMUM_LENGTH 1
 #define UE_NSSAI_MAXIMUM_LENGTH 7
 
-typedef struct req_snssai {
+typedef struct {
   /* Requested Single Network slice selection assistant information - S-NSSAI */
   uint8_t sst; // slice/service type
   uint8_t sd; //slice differentiator
@@ -109,13 +109,14 @@ typedef struct req_snssai {
 
 typedef struct {
   /* Requested Network slice selection assistant information - NSSAI */
-  req_snssai_t snssai;
-} req_nssai_t;
+  int size;
+  req_snssai_t snssai[8];
+} Req_Nssai;
 
 
 
 
-int encode_ue_req_nssai(req_nssai_t *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len);
+int encode_ue_req_nssai(Req_Nssai *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len);
 
 
 int encode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8_t iei, uint8_t *buffer, uint32_t len);

@@ -69,6 +69,7 @@ Description Defines the attach related EMM procedure executed by the
 
 #include <string.h> // memcmp, memcpy
 #include <stdlib.h> // malloc, free
+#include <unistd.h>
 
 /****************************************************************************/
 /****************  E X T E R N A L    D E F I N I T I O N S  ****************/
@@ -224,8 +225,17 @@ int emm_proc_attach(nas_user_t *user, emm_proc_attach_type_t type)
   }
 
   /* Setup NSSAI data */
+  // int n = 0;
   
-  // emm_as->as_nssai.snssai.sst = user->emm_data->nssai.snssai.sst;
+  emm_as->as_nssai.snssai[0].sst = user->nas_user_nvdata->nv_nssai.items[0].sst;
+  // n = user->nas_user_nvdata->nv_nssai.items[0].sst - '0';
+
+// int val = 0;
+//    char str[4];
+//       strcpy(str, user->nas_user_nvdata->nv_nssai.items[0].sst);
+//    val = atoi(str);
+
+  // emm_as->as_nssai.snssai[0].sst = 2;
   // emm_as->as_nssai.snssai.sd = user->emm_data->nssai.snssai.sd;
   /*
    * Notify ESM that initiation of a PDN connectivity procedure

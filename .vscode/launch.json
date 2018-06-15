@@ -35,7 +35,7 @@
             "program": "/home/andrey/openairinterface5g/targets/bin/oaisim.Rel14",
             "args": [
                 "--enb-conf", "/home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf",
-                "-s15", "-AAWGN", "-y1", "-b1", "-u2", "-Q0"
+                "-s15", "-AAWGN", "-y1", "-b1", "-u1", "-Q0"
 
             ],
             "stopAtEntry": false,
