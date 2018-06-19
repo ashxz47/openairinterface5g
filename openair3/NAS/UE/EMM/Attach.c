@@ -226,8 +226,15 @@ int emm_proc_attach(nas_user_t *user, emm_proc_attach_type_t type)
 
   /* Setup NSSAI data */
   // int n = 0;
-  
-  emm_as->as_nssai.snssai[0].sst = user->nas_user_nvdata->nv_nssai.items[0].sst;
+  if (user->nas_user_nvdata->nv_nssai.size > 0)
+  {
+    emm_as->as_nssai.size = user->nas_user_nvdata->nv_nssai.size;
+    for (int i = 0; i < user->nas_user_nvdata->nv_nssai.size; i++)
+    {
+      emm_as->as_nssai.snssai[i].sst = user->nas_user_nvdata->nv_nssai.items[i].sst;
+      emm_as->as_nssai.snssai[i].sd = user->nas_user_nvdata->nv_nssai.items[i].sd;
+    }
+  }
   // n = user->nas_user_nvdata->nv_nssai.items[0].sst - '0';
 
 // int val = 0;

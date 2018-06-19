@@ -109,6 +109,7 @@ void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 			user_data->nv_nssai.items[i].sst = atoi(u->ue_nssai.items[i].sst);
 			user_data->nv_nssai.items[i].sd = atoi(u->ue_nssai.items[i].sd);
 		}
+		user_data->nv_nssai.size = u->ue_nssai.size;
 	}
 }
 

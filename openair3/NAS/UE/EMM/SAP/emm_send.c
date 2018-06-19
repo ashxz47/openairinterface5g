@@ -270,7 +270,16 @@ int emm_send_attach_request(const emm_as_establish_t *msg,
   emm_msg->uenetworkcapability.nf = 0;
   
   /*NSSAI*/
-  emm_msg->uereqnssai->snssai[0].sst = msg->as_nssai.snssai[0].sst;
+  if (msg->as_nssai.size > 0)
+  {
+    emm_msg->uereqnssai.size = msg->as_nssai.size;
+    for (int i = 0; i < msg->as_nssai.size; i++)
+    {
+      emm_msg->uereqnssai.snssai[i].sst = msg->as_nssai.snssai[i].sst;
+      emm_msg->uereqnssai.snssai[i].sd = msg->as_nssai.snssai[i].sd;
+    }
+  }
+  // emm_msg->uereqnssai->snssai[0].sst = msg->as_nssai.snssai[0].sst;
   // emm_msg->uereqnssai[0].snssai.sd = msg->as_nssai.snssai.sd;
 
   /* Mandatory - ESM message container */

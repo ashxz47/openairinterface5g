@@ -74,6 +74,7 @@ typedef struct {
 } nv_snssai_t;
 
 typedef struct {
+    int size;
     nv_snssai_t items[8];
 } nv_nssai_t; //all snssai per UE
 

@@ -147,24 +147,36 @@ int encode_ue_req_nssai(Req_Nssai *uereqnssai, uint8_t iei, uint8_t *buffer, uin
   uint32_t encoded = 0;
   /* Checking IEI and pointer */
   CHECK_PDU_POINTER_AND_LENGTH_ENCODER(buffer, UE_NSSAI_MINIMUM_LENGTH, len);
-//#if defined (NAS_DEBUG)
-//  dump_ue_network_capability_xml(uenetworkcapability, iei);
-//#endif
+#if defined (NAS_DEBUG)
+ dump_ue_req_nssai_xml(uereqnssai, iei);
+#endif
 
-  if (iei > 0) {
+  if (iei > 0)
+  {
     *buffer = iei;
     encoded++;
   }
 
-  lenPtr  = (buffer + encoded);
-  encoded ++;
-   // TODO cycle to fill all 8 s-nssai
-  // *(buffer + encoded) = uereqnssai[0].snssai.sst;
-  *(buffer + encoded) = &uereqnssai->snssai[0]; //to check buffer SST
+  lenPtr = (buffer + encoded);
   encoded++;
+
+  if (uereqnssai->size > 0)
+  {
+    for (int i = 0; i < uereqnssai->size; i++)
+    {
+      *(buffer + encoded) = &uereqnssai->snssai[i].sst;
+      encoded++;
+      *(buffer + encoded) = &uereqnssai->snssai[i].sd;
+      encoded++;
+    }
+  }
+
+  // *(buffer + encoded) = &uereqnssai->snssai[0]; //to check buffer SST
+  // encoded++;
   // *(buffer + encoded) = uereqnssai[0].snssai.sd;
-  *(buffer + encoded) = 51; //to check buffer SD
-  encoded++;
+  // *(buffer + encoded) = 51; //to check buffer SD
+  // encoded++;
+
   LOG_TRACE(INFO, "Requested NSSAI encoded NGS %u\n", encoded);
 
   *lenPtr = encoded - 1 - ((iei > 0) ? 1 : 0);
@@ -196,3 +208,19 @@ void dump_ue_network_capability_xml(UeNetworkCapability *uenetworkcapability, ui
   printf("</Ue Network Capability>\n");
 }
 
+void dump_ue_req_nssai_xml(Req_Nssai *uereqnssai, uint8_t iei)
+{
+  printf("<Ue Requested NSSAI>\n");
+
+  if (iei > 0)
+    /* Don't display IEI if = 0 */
+    printf("    <IEI>0x%X</IEI>\n", iei);
+
+for (int i = 0; i < uereqnssai->size; i++)
+    {
+      printf("    <SNSSAI%d:SST>%u</SNSSAI%d:SST>\n", i, uereqnssai->snssai[i].sst);
+      printf("    <SNSSAI%d:SD>%u</SNSSAI%d:SD>\n", i, uereqnssai->snssai[i].sd);
+    
+  printf("</Ue Requested NSSAI>\n");
+    }
+}

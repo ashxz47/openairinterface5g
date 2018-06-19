@@ -125,5 +125,7 @@ int decode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8
 
 void dump_ue_network_capability_xml(UeNetworkCapability *uenetworkcapability, uint8_t iei);
 
+void dump_ue_req_nssai_xml(Req_Nssai *uereqnssai, uint8_t iei);
+
 #endif /* UE NETWORK CAPABILITY_H_ */
 

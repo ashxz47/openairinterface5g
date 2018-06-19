@@ -146,6 +146,7 @@ typedef struct as_snssai {
 
 typedef struct {
   /* AS_NSSAI */
+  int size;
   as_snssai_t snssai[8];
 } as_nssai_t;
 
