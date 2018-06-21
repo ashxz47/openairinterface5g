@@ -98,6 +98,15 @@ void display_ue_data(const char *filename) {
 	printf("manufacturer\t= %s\n", data.manufacturer);
 	printf("model\t\t= %s\n", data.model);
 	printf("PIN\t\t= %s\n", data.PIN);
+	if (data.nv_nssai.size > 0)
+	{
+		printf("NSSAI:\n");
+		for (int i = 0; i < data.nv_nssai.size; i++)
+		{
+			printf("    SNSSAI%d_SST\t= %u\n", i, data.nv_nssai.items[i].sst);
+			printf("    SNSSAI%d_SD\t= %u\n", i, data.nv_nssai.items[i].sd);
+		}
+	}
 }
 
 /*

@@ -19,7 +19,8 @@
 			"future": "cpp",
 			"ratio": "c",
 			"cstdlib": "c",
-			"sstream": "c"
+			"sstream": "c",
+			"*.tcc": "c"
 		}
 	}
 }

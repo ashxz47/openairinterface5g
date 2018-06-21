@@ -32,6 +32,7 @@ Product     NAS stack
 Subsystem   EPS Mobility Management
 
 Author      Frederic Maurel
+Modifications Andrey Shorov
 
 Description Defines the attach related EMM procedure executed by the
         Non-Access Stratum.
@@ -225,7 +226,6 @@ int emm_proc_attach(nas_user_t *user, emm_proc_attach_type_t type)
   }
 
   /* Setup NSSAI data */
-  // int n = 0;
   if (user->nas_user_nvdata->nv_nssai.size > 0)
   {
     emm_as->as_nssai.size = user->nas_user_nvdata->nv_nssai.size;
@@ -234,16 +234,9 @@ int emm_proc_attach(nas_user_t *user, emm_proc_attach_type_t type)
       emm_as->as_nssai.snssai[i].sst = user->nas_user_nvdata->nv_nssai.items[i].sst;
       emm_as->as_nssai.snssai[i].sd = user->nas_user_nvdata->nv_nssai.items[i].sd;
     }
+    LOG_TRACE(INFO, "EMM-PROC  - NSSAI put into EMM AS message");
   }
-  // n = user->nas_user_nvdata->nv_nssai.items[0].sst - '0';
 
-// int val = 0;
-//    char str[4];
-//       strcpy(str, user->nas_user_nvdata->nv_nssai.items[0].sst);
-//    val = atoi(str);
-
-  // emm_as->as_nssai.snssai[0].sst = 2;
-  // emm_as->as_nssai.snssai.sd = user->emm_data->nssai.snssai.sd;
   /*
    * Notify ESM that initiation of a PDN connectivity procedure
    * is requested to setup a default EPS bearer
