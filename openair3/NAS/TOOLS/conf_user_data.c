@@ -106,8 +106,27 @@ void gen_user_data(user_data_conf_t *u, user_nvdata_t *user_data) {
 	{
 		for (int i = 0; i < u->ue_nssai.size; i++)
 		{
-			user_data->nv_nssai.items[i].sst = atoi(u->ue_nssai.items[i].sst);
-			user_data->nv_nssai.items[i].sd = atoi(u->ue_nssai.items[i].sd);
+			int sst = atoi(u->ue_nssai.items[i].sst);
+			if (sst < 0)
+			{
+				user_data->nv_nssai.items[i].sst = 0;
+			}
+			else
+			{
+				user_data->nv_nssai.items[i].sst = sst;
+			}
+
+			int sd = atoi(u->ue_nssai.items[i].sd);
+			if (sd < 0)
+			{
+				user_data->nv_nssai.items[i].sd = 0;
+			}
+			else
+			{
+				user_data->nv_nssai.items[i].sd = sd;
+			}
+			// user_data->nv_nssai.items[i].sst = atoi(u->ue_nssai.items[i].sst);
+			// user_data->nv_nssai.items[i].sd = atoi(u->ue_nssai.items[i].sd);
 		}
 		user_data->nv_nssai.size = u->ue_nssai.size;
 	}

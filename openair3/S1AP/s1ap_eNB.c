@@ -133,7 +133,8 @@ static void s1ap_eNB_register_mme(s1ap_eNB_instance_t *instance_p,
 	      
   mme = s1ap_eNB_get_MME_from_instance(instance_p);
 
-  if ( mme == NULL ) {
+  if (instance_p)  {
+  // if (mme == NULL)  {
     
     /* Create new MME descriptor */
     s1ap_mme_data_p = calloc(1, sizeof(*s1ap_mme_data_p));

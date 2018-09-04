@@ -350,6 +350,18 @@ typedef struct HANDOVER_INFO_UE_s {
   uint8_t measFlag;
 } HANDOVER_INFO_UE;
 
+typedef struct as_snssai {
+  /* Single Network slice selection assistant information - S-NSSAI */
+  uint8_t sst; // slice/service type
+  uint8_t sd; //slice differentiator
+} rrc_snssai_t;
+
+typedef struct {
+  /* RRC_NSSAI */
+  int size;
+  rrc_snssai_t snssai[8];
+} rrc_nssai_t;
+
 typedef struct eNB_RRC_UE_s {
   uint8_t                            primaryCC_id;
 #if defined(Rel10) || defined(Rel14)
@@ -402,6 +414,9 @@ typedef struct eNB_RRC_UE_s {
   uint32_t                           eNB_ue_s1ap_id :24;
 
   security_capabilities_t            security_capabilities;
+
+  /* UE's NSSAI information for RRC */
+  rrc_nssai_t                        ue_rrc_nssai;
 
   /* Total number of e_rab already setup in the list */
   uint8_t                           setup_e_rabs;
