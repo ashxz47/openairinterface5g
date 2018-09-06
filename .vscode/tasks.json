@@ -13,6 +13,18 @@
                 "--oaisim",
                 "--UE"
             ],
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "oaisim only",
+            "type": "shell",
+            "command": "/home/andrey/openairinterface5g/cmake_targets/build_oai",
+            "args": [
+                "--oaisim"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -22,20 +34,17 @@
             },
             "problemMatcher": "$msCompile"
         },
-
         {
             "label": "simtools",
             "type": "shell",
             "command": "/home/andrey/openairinterface5g/cmake_targets/build_oai",
             "args": [
-                
                 "--UE"
             ],
-                "presentation": {
+            "presentation": {
                 "reveal": "always"
             },
             "problemMatcher": "$msCompile"
         }
     ]
-
 }

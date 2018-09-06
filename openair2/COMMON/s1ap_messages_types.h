@@ -180,6 +180,18 @@ typedef struct s_tmsi_s {
   uint32_t m_tmsi;
 } s_tmsi_t;
 
+typedef struct {
+  /* Single Network slice selection assistant information - S-NSSAI */
+  uint8_t sst; // slice/service type
+  uint8_t sd; //slice differentiator
+} s1ap_snssai_t;
+
+typedef struct {
+  /* s1ap_NSSAI */
+  int size;
+  s1ap_snssai_t snssai[8];
+} s1ap_nssai_t;
+
 typedef enum ue_paging_identity_presenceMask_e {
   UE_PAGING_IDENTITY_NONE   = 0,
   UE_PAGING_IDENTITY_imsi   = (1 << 1),
@@ -198,12 +210,14 @@ typedef enum ue_identities_presenceMask_e {
   UE_IDENTITIES_NONE   = 0,
   UE_IDENTITIES_s_tmsi = 1 << 1,
   UE_IDENTITIES_gummei = 1 << 2,
+  UE_IDENTITIES_nssai = 1 << 3,
 } ue_identities_presenceMask_t;
 
 typedef struct ue_identity_s {
   ue_identities_presenceMask_t presenceMask;
   s_tmsi_t s_tmsi;
   s1ap_gummei_t gummei;
+  s1ap_nssai_t s1ap_nssai;
 } ue_identity_t;
 
 typedef struct nas_pdu_s {

@@ -81,7 +81,12 @@
 			"typeinfo": "cpp",
 			"s1ap_enb_nnsf.h": "c",
 			"s1ap-lastvisitedeutrancellinformation.h": "c",
-			"rrc_enb_ue_context.h": "c"
+			"rrc_enb_ue_context.h": "c",
+			"uereqnssai.h": "c",
+			"tlvencoder.h": "c",
+			"s1ap_enb_ue_context.h": "c",
+			"s1ap_enb_management_procedures.h": "c",
+			"s1ap_enb_nas_procedures.h": "c"
 		}
 	}
 }

@@ -91,6 +91,47 @@ int decode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8
 #endif
   return decoded;
 }
+
+int decode_ue_req_nssai(UeReqNssai *uereqnssai, uint8_t iei, uint8_t *buffer, uint32_t len)
+{
+  int                                     decoded = 0;
+  uint8_t                                 ielen = 0;
+
+  if (iei > 0) {
+      CHECK_IEI_DECODER (iei, *buffer);
+      decoded++;
+    }
+
+  DECODE_U8 (buffer + decoded, ielen, decoded);
+  memset (uereqnssai, 0, sizeof (UeReqNssai));
+  LOG_TRACE (INFO, "decode_ue_nssai len = %d\n", ielen);
+  CHECK_LENGTH_DECODER (len - decoded, ielen);
+
+  // decode buffer
+  if (ielen > 0)
+  {
+    for (int i = 0; i < (ielen/2); i++)
+    {
+      uereqnssai->snssai[i].sst = *(buffer + decoded);
+      LOG_TRACE (INFO, "SNSSAI%d.SST=%u\n", i, uereqnssai->snssai[i].sst);
+      decoded++;
+      uereqnssai->snssai[i].sd = *(buffer + decoded);
+      LOG_TRACE (INFO, "SNSSAI%d.SD=%u\n", i, uereqnssai->snssai[i].sd);
+      decoded++;
+    }
+  }
+
+  LOG_TRACE (INFO, "uereqnssai decoded=%u\n", decoded);
+
+  if ((ielen + 2) != decoded) {
+    decoded = ielen + 1 + (iei > 0 ? 1 : 0) /* Size of header for this IE */ ;
+    LOG_TRACE (INFO, "uereqnssai then decoded=%u\n", decoded);
+  }
+
+  return decoded;
+
+}
+
 int encode_ue_network_capability(UeNetworkCapability *uenetworkcapability, uint8_t iei, uint8_t *buffer, uint32_t len)
 {
   uint8_t *lenPtr;

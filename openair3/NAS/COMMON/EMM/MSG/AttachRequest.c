@@ -81,6 +81,18 @@ int decode_attach_request(attach_request_msg *attach_request, uint8_t *buffer, u
       ieiDecoded = ieiDecoded & 0xf0;
 
     switch(ieiDecoded) {
+
+
+  /*
+   * Decoding NSSAI
+   */
+    case ATTACH_REQUEST_NSSAI_IEI:
+     if ((decoded_result = decode_ue_req_nssai (&attach_request->uereqnssai, ATTACH_REQUEST_NSSAI_IEI, buffer + decoded, len - decoded)) <= 0) {
+        return decoded_result;
+      }
+      decoded += decoded_result;
+      break;
+
     case ATTACH_REQUEST_OLD_PTMSI_SIGNATURE_IEI:
       if ((decoded_result =
              decode_p_tmsi_signature(&attach_request->oldptmsisignature,

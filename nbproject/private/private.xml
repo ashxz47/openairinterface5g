@@ -10,38 +10,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/Attach.c</file>
             <file>file:/home/andrey/openairinterface5g/targets/SIMU/USER/oaisim.c</file>
-            <file>file:/home/andrey/openairinterface5g/targets/COMMON/create_tasks.c</file>
-            <file>file:/home/andrey/openairinterface5g/cmake_targets/CMakeLists.txt</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/ESM/MSG/esm_msg.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_as.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/emm_main.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/IdleMode.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/nas_proc.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair2/LAYER2/MAC/eNB_scheduler.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/SCTP/sctp_eNB_task.c</file>
-            <file>file:/home/andrey/openairinterface5g/common/utils/itti/intertask_interface.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/emmData.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/ESM/SAP/esm_sap.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/API/NETWORK/nas_message.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeNetworkCapability.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_reg.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest_1.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_send.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair2/COMMON/nas_messages_types.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_fsm.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/IES/UeNetworkCapability.c</file>
-            <file>file:/home/andrey/openairinterface5g/cmake_targets/build_oai</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/emm_msg.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_asDef.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/emm_msg.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/EmmDeregisteredNormalService.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/EMM/SAP/emm_sap.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/UE/nas_itti_messaging.c</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/API/NETWORK/nas_message.h</file>
-            <file>file:/home/andrey/openairinterface5g/openair3/NAS/COMMON/EMM/MSG/AttachRequest.h</file>
+            <file>file:/home/andrey/openairinterface5g/openair3/S1AP/s1ap_eNB_nas_procedures.c</file>
         </group>
     </open-files>
 </project-private>
