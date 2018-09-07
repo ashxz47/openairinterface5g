@@ -52,35 +52,27 @@
 #include "TLVEncoder.h"
 #include "TLVDecoder.h"
 
-void user_nssai_decode(uint8_t *pdubuffer, uint32_t len)
+void s1ap_user_nssai_decode(s1ap_nas_nssai_t *s1apnssai, uint8_t *pdubuffer, uint32_t len)
 {
   uint32_t decoded = 0;
   int i;
-  // int decoded_result = 0;
 
   CHECK_PDU_POINTER_AND_LENGTH_DECODER(pdubuffer, ATTACH_REQUEST_MINIMUM_LENGTH, len);
-  for (i = 0; i < len; i++)   
-  // while ((len - decoded) > 0)
+  
+  while ((i = len - decoded) > 0)
   {
-    uint8_t ieiDecoded = *(pdubuffer + i);
-
-    /* Type | value iei are below 0x80 so just return the first 4 bits */
-    if (ieiDecoded >= 0x80)
-      ieiDecoded = ieiDecoded & 0xf0;
-
+    uint8_t ieiDecoded = *(pdubuffer + decoded);
+    
     if (ieiDecoded == ATTACH_REQUEST_NSSAI_IEI)
     {
-      int decoded = 0;
       uint8_t ielen = 0;
 
-      if (ATTACH_REQUEST_NSSAI_IEI > 0)
-      {
-        CHECK_IEI_DECODER(ATTACH_REQUEST_NSSAI_IEI, *pdubuffer);
+      // if (ATTACH_REQUEST_NSSAI_IEI > 0)
+      // {
+        // CHECK_IEI_DECODER(ATTACH_REQUEST_NSSAI_IEI, *pdubuffer);
         decoded++;
-      }
-
+      // }
       DECODE_U8(pdubuffer + decoded, ielen, decoded);
-      // memset(uereqnssai, 0, sizeof(UeReqNssai));
       // LOG_TRACE(INFO, "decode_ue_nssai len = %d\n", ielen);
       CHECK_LENGTH_DECODER(len - decoded, ielen);
 
@@ -89,16 +81,17 @@ void user_nssai_decode(uint8_t *pdubuffer, uint32_t len)
       {
         for (int i = 0; i < (ielen / 2); i++)
         {
-          // uereqnssai->snssai[i].sst = *(buffer + decoded);
+          s1apnssai->snssai[i].sst = *(pdubuffer + decoded);
           // LOG_TRACE(INFO, "SNSSAI%d.SST=%u\n", i, uereqnssai->snssai[i].sst);
-          // decoded++;
-          // uereqnssai->snssai[i].sd = *(buffer + decoded);
+          decoded++;
+          s1apnssai->snssai[i].sd = *(pdubuffer + decoded);
           // LOG_TRACE(INFO, "SNSSAI%d.SD=%u\n", i, uereqnssai->snssai[i].sd);
           decoded++;
         }
+        s1apnssai->size = ielen / 2;
       }
     }
-    // decoded++;
+    decoded++;
   }
 }
 
@@ -132,8 +125,8 @@ int s1ap_eNB_handle_nas_first_req(
   initial_ue_message_p = &message.msg.s1ap_InitialUEMessageIEs;
 
 
-
-  // user_nssai_decode (s1ap_nas_first_req_p->nas_pdu.buffer, s1ap_nas_first_req_p->nas_pdu.length);
+  s1ap_user_nssai_decode (
+    &s1ap_nas_first_req_p->ue_identity.s1ap_nssai, s1ap_nas_first_req_p->nas_pdu.buffer, s1ap_nas_first_req_p->nas_pdu.length);
 
 
   /* Select the MME corresponding to the provided GUMMEI. */
@@ -155,8 +148,19 @@ int s1ap_eNB_handle_nas_first_req(
   }
 
   if (mme_desc_p == NULL) {
+     /*
+     * Select the MME corresponding to the provided NSSAI.
+     */
+    if (s1ap_nas_first_req_p->ue_identity.s1ap_nssai.size > 0)
+    {
+          mme_desc_p = s1ap_eNB_nnsf_select_mme_by_nssai(
+            instance_p, s1ap_nas_first_req_p->establishment_cause, s1ap_nas_first_req_p->ue_identity.s1ap_nssai);
+    }
+  }
+
+  if (mme_desc_p == NULL) {
     /*
-     * If no MME corresponds to the GUMMEI or the s-TMSI, selects the MME with the
+     * If no MME corresponds to the GUMMEI, or the s-TMSI, or the NSSAI selects the MME with the
      * highest capacity.
      */
     mme_desc_p = s1ap_eNB_nnsf_select_mme(

@@ -10,6 +10,7 @@
             "args": [
                 "-x",
                 "-c",
+                "-g",
                 "--oaisim",
                 "--UE"
             ],
@@ -23,7 +24,9 @@
             "type": "shell",
             "command": "/home/andrey/openairinterface5g/cmake_targets/build_oai",
             "args": [
-                "--oaisim"
+                "--oaisim",
+                "-g",
+                "-x"
             ],
             "group": {
                 "kind": "build",

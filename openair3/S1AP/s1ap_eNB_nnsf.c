@@ -255,3 +255,65 @@ s1ap_eNB_nnsf_select_mme_by_gummei(s1ap_eNB_instance_t       *instance_p,
    */
   return mme_highest_capacity_p;
 }
+
+struct s1ap_eNB_mme_data_s *
+s1ap_eNB_nnsf_select_mme_by_nssai(
+  s1ap_eNB_instance_t *instance_p, rrc_establishment_cause_t cause, s1ap_nssai_t nssai)
+{
+  struct s1ap_eNB_mme_data_s *mme_data_p = NULL;
+  struct s1ap_eNB_mme_data_s *mme_highest_capacity_p = NULL;
+  uint8_t current_capacity = 0;
+
+  RB_FOREACH(mme_data_p, s1ap_mme_map, &instance_p->s1ap_mme_head) {
+    if (mme_data_p->state != S1AP_ENB_STATE_CONNECTED) {
+      /* The association between MME and eNB is not ready for the moment,
+       * go to the next known MME.
+       */
+      if (mme_data_p->state == S1AP_ENB_OVERLOAD) {
+        /* MME is overloaded. We have to check the RRC establishment
+         * cause and take decision to the select this MME depending on
+         * the overload state.
+         */
+        if ((cause == RRC_CAUSE_MO_DATA)
+            && (mme_data_p->overload_state == S1AP_OVERLOAD_REJECT_MO_DATA)) {
+          continue;
+        }
+
+        if ((mme_data_p->overload_state == S1AP_OVERLOAD_REJECT_ALL_SIGNALLING)
+            && ((cause == RRC_CAUSE_MO_SIGNALLING) || (cause == RRC_CAUSE_MO_DATA))) {
+          continue;
+        }
+
+        if ((mme_data_p->overload_state == S1AP_OVERLOAD_ONLY_EMERGENCY_AND_MT)
+            && ((cause == RRC_CAUSE_MO_SIGNALLING) || (cause == RRC_CAUSE_MO_DATA)
+                || (cause == RRC_CAUSE_HIGH_PRIO_ACCESS))) {
+          continue;
+        }
+
+        /* At this point, the RRC establishment can be handled by the MME
+         * even if it is in overload state.
+         */
+      } else {
+        /* The MME is not overloaded, association is simply not ready. */
+        continue;
+      }
+    }
+
+    for (int i = 0; i < (nssai.size); i++)
+    {
+      int sst = nssai.snssai[i].sst;
+      if (sst == mme_data_p->cnx_id)
+      {
+        mme_highest_capacity_p = mme_data_p;
+        return mme_highest_capacity_p;
+      }
+    }
+    // if (current_capacity < mme_data_p->relative_mme_capacity) {
+    //   /* We find a better MME, keep a reference to it */
+    //   current_capacity = mme_data_p->relative_mme_capacity;
+    //   mme_highest_capacity_p = mme_data_p;
+    // }
+  }
+
+  return mme_highest_capacity_p;
+}

@@ -22,6 +22,18 @@
 #ifndef S1AP_ENB_NAS_PROCEDURES_H_
 #define S1AP_ENB_NAS_PROCEDURES_H_
 
+typedef struct {
+  /* Single Network slice selection assistant information - S-NSSAI */
+  uint8_t sst; // slice/service type
+  uint8_t sd; //slice differentiator
+} s1ap_nas_snssai_t;
+
+typedef struct {
+  /* Network slice selection assistant information - NSSAI */
+  int size;
+  s1ap_nas_snssai_t snssai[8];
+} s1ap_nas_nssai_t;
+
 int s1ap_eNB_handle_nas_downlink(
   const uint32_t               assoc_id,
   const uint32_t               stream,
@@ -44,6 +56,6 @@ int s1ap_eNB_ue_capabilities(instance_t instance,
 int s1ap_eNB_e_rab_setup_resp(instance_t instance,
                               s1ap_e_rab_setup_resp_t *e_rab_setup_resp_p);
 
-void user_nssai_decode (uint8_t *pdubuffer, uint32_t len);
+void s1ap_user_nssai_decode (s1ap_nas_nssai_t *s1apnssai, uint8_t *pdubuffer, uint32_t len);
 
 #endif /* S1AP_ENB_NAS_PROCEDURES_H_ */

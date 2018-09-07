@@ -86,7 +86,10 @@
 			"tlvencoder.h": "c",
 			"s1ap_enb_ue_context.h": "c",
 			"s1ap_enb_management_procedures.h": "c",
-			"s1ap_enb_nas_procedures.h": "c"
+			"s1ap_enb_nas_procedures.h": "c",
+			"queue.h": "c",
+			"intertask_interface_types.h": "c",
+			"messages_types.h": "c"
 		}
 	}
 }

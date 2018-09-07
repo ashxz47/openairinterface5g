@@ -186,7 +186,7 @@ typedef struct {
   uint8_t sd; //slice differentiator
 } s1ap_snssai_t;
 
-typedef struct {
+typedef struct s1ap_nssai_s {
   /* s1ap_NSSAI */
   int size;
   s1ap_snssai_t snssai[8];

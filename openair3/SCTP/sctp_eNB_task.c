@@ -667,27 +667,47 @@ sctp_eNB_read_from_socket(
                    (struct sockaddr *)&addr, &from_len,
                    &sinfo, &flags);
 
-  if (n < 0) {
-    if (errno == ENOTCONN) {
+  if (n < 0)
+  {
+    if (errno == ENOTCONN)
+    {
       itti_unsubscribe_event_fd(TASK_SCTP, sctp_cnx->sd);
 
       SCTP_DEBUG("Received not connected for sd %d\n", sctp_cnx->sd);
 
       sctp_itti_send_association_resp(
-        sctp_cnx->task_id, sctp_cnx->instance, -1,
-        sctp_cnx->cnx_id, SCTP_STATE_UNREACHABLE, 0, 0);
+          sctp_cnx->task_id, sctp_cnx->instance, -1,
+          sctp_cnx->cnx_id, SCTP_STATE_UNREACHABLE, 0, 0);
 
       close(sctp_cnx->sd);
       STAILQ_REMOVE(&sctp_cnx_list, sctp_cnx, sctp_cnx_list_elm_s, entries);
       sctp_nb_cnx--;
       free(sctp_cnx);
-    } else {
+    }
+    else
+    {
+      //TODO: Proper event handler should be implemented
+      itti_unsubscribe_event_fd(TASK_SCTP, sctp_cnx->sd);
+
+      SCTP_DEBUG("Received not connected for sd %d\n", sctp_cnx->sd);
+
+      sctp_itti_send_association_resp(
+          sctp_cnx->task_id, sctp_cnx->instance, -1,
+          sctp_cnx->cnx_id, SCTP_STATE_UNREACHABLE, 0, 0);
+
+      close(sctp_cnx->sd);
+      STAILQ_REMOVE(&sctp_cnx_list, sctp_cnx, sctp_cnx_list_elm_s, entries);
+      sctp_nb_cnx--;
+      free(sctp_cnx);
+
       SCTP_DEBUG("An error occured during read\n");
       SCTP_ERROR("sctp_recvmsg (fd %d, len %d ): %s:%d\n", sctp_cnx->sd, n, strerror(errno), errno);
     }
 
     return;
-  } else if (n == 0) {
+  }
+  else if (n == 0)
+  {
     SCTP_DEBUG("return of sctp_recvmsg is 0...\n");
     return;
   }

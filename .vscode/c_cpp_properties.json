@@ -50,7 +50,7 @@
                 "${workspaceFolder}/common/utils/itti",
                 "${workspaceFolder}/openair1",
                 "${workspaceFolder}/openair2/RRC/LITE",
-                "${workspaceFolder}/openair2/RRC/LITE",
+                "${workspaceFolder}/openair2/RRC/LITE/MESSAGES",
                 "${workspaceFolder}/cmake_targets/lte_build_oai/build/CMakeFiles/R10.5",
                 "${workspaceFolder}/cmake_targets/oaisim_build_oai/build/CMakeFiles/R10.5",
                 "${workspaceFolder}/openair3/UTILS",
@@ -61,7 +61,8 @@
                 "${workspaceFolder}/openair3/COMMON",
                 "${workspaceFolder}/openair3/COMMON",
                 "${workspaceFolder}/openair3/NAS/UE/EMM/SAP",
-                "${workspaceFolder}/openair3/NAS/UE/ESM/SAP"
+                "${workspaceFolder}/openair3/NAS/UE/ESM/SAP",
+                "${workspaceFolder}/openair3/S1AP"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
