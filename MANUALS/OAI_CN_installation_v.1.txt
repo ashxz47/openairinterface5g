@@ -1,0 +1,280 @@
+How to run OAI CN (openair-cn) in Ubuntu 14.04 (kernel 4.7.7-oaiepc) / 16.04 (kernel => 4.7) both 64-bit
+Some parts of this guide were taken from: 
+http://www.openairinterface.org/?page_id=25
+and
+https://open-cells.com/index.php/2017/08/22/all-in-one-openairinterface-august-22nd/
+
+This guide was tested with help of VirtualBox.
+The configuration files should be checked! This instruction only to run OAI CORE!
+
+-------------------------
+Prerequisite:
+
+Update repos and install git:
+
+sudo apt-get update
+sudo apt-get install git
+
+OAI CN is needed for GTP module in the kernel. Because of that check that you have a proper kernel:
+
+uname -a
+
+Kernel should be => 4.7 and < than 4.15.
+
+If you run Ubuntu 14.04 usually you have kernel <= 4.7. So you can install 4.7.x kernel from pre-compiled debian package:
+
+git clone https://gitlab.eurecom.fr/oai/linux-4.7.x.git
+cd linux-4.7.x
+sudo dpkg -i linux-headers-4.7.7-oaiepc_4.7.7-oaiepc-10.00.Custom_amd64.deb linux-image-4.7.7-oaiepc_4.7.7-oaiepc-10.00.Custom_amd64.deb
+
+How to setup the default kernel:
+
+sudo nano /etc/default/grub
+
+Add there: 
+
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
+
+After that update grub:
+
+sudo update-grub
+
+Do reboot. While reboot press "SHIFT" on keyboard and in menu select "Advanced options" and in submenu kernel you would like to use by default (e.g. 4.7.7). If you do this, next reboot the selected kernel be loaded by default.
+
+After that reboot you computer and check the kernel and GTP module:
+
+uname -a 
+
+The kernel should be 4.7.7.
+
+sudo modprobe gtp
+dmesg |tail # You should see something (in the end) that says about GTP kernel module, like "gtp: GTP module loaded"
+
+Add a certificate from gitlab.eurecom.fr to your Ubuntu 14.04 installation:
+
+echo -n | openssl s_client -showcerts -connect gitlab.eurecom.fr:443 2>/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
+
+Check your host name:
+
+hostname #it shows your YOURHOSTNAME remember it
+
+Fill the FQDN in /etc/hosts:
+
+sudo nano /etc/hosts
+
+Fill /etc/hosts like below:
+127.0.0.1    localhost
+127.0.1.1    YOURHOSTNAME.openair4G.eur   YOURHOSTNAME
+127.0.1.1    hss.openair4G.eur    hss
+
+Check:
+
+hostname
+
+Output: YOURHOSTNAME
+
+hostname -f 
+
+Output: YOURHOSTNAME.openair4G.eur
+
+-----------------------------------------
+Checkout EPC (Core Network) repository:
+
+git clone https://gitlab.eurecom.fr/oai/openair-cn.git
+cd openair-cn
+
+Go to develop branch:
+
+git checkout develop
+
+Go to OAI directory if you are not there:
+
+cd openair-cn
+
+Set source:
+
+source oaienv
+cd scripts
+
+-----------------------
+Build EPC nodes
+
+Build HSS:
+
+./build_hss -i
+
+set your MySQL password and remember it (e.g. root)!
+Answer yes to install: freeDyiameteriameter 1.2.0
+phpmyadmin:
+choose light or apache as you prefer
+Configure database for phpmyadmin with dbconfig-common: yes
+password: same as MySQL for simplicity
+
+Install 3PP SW for mme and spgw:
+
+./build_mme -i
+
+yes for all questions.
+-----
+If configuring phpmyadmin dialog said :"ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'"
+then open a new ternimal: 
+ 
+sudo service mysql start
+ 
+after that choose "retry".
+-----
+
+./build_spgw -i
+
+yes for all questions.
+
+-------------------------------
+Configuration EPC
+
+Copy the EPC config files to /usr/local/etc/oai:
+
+sudo mkdir -p /usr/local/etc/oai/freeDiameter
+sudo cp ~/openair-cn/etc/mme.conf /usr/local/etc/oai
+sudo cp ~/openair-cn/etc/hss.conf /usr/local/etc/oai
+sudo cp ~/openair-cn/etc/spgw.conf /usr/local/etc/oai
+sudo cp ~/openair-cn/etc/acl.conf /usr/local/etc/oai/freeDiameter
+sudo cp ~/openair-cn/etc/mme_fd.conf /usr/local/etc/oai/freeDiameter
+sudo cp ~/openair-cn/etc/hss_fd.conf /usr/local/etc/oai/freeDiameter
+
+After that you should correct the configuration files. 
+Beforehand check your network interfaces:
+
+ifconfig
+
+Use the output to fill the configuration files below.
+
+In MME configuration file (/usr/local/etc/oai/mme.conf):
+
+EALM = "openair4G.eur";
+
+    S6A :
+    {
+        S6A_CONF                   = "/usr/local/etc/oai/freeDiameter/mme_fd.conf"; # YOUR MME freeDiameter config file path
+        HSS_HOSTNAME               = "hss";                                         # THE HSS HOSTNAME
+    };
+
+GUMMEI_LIST = ( 
+        {MCC="208" ; MNC="92"; MME_GID="4" ; MME_CODE="1"; }                   # YOUR GUMMEI CONFIG HERE
+     );
+
+TAI_LIST = (
+{MCC="208" ; MNC="92";  TAC = "1"; }                              # YOUR PLMN CONFIG HERE
+);
+
+   NETWORK_INTERFACES :
+    {
+        # MME binded interface for S1-C or S1-MME  communication (S1AP), can be ethernet interface, virtual ethernet interface, we don't advise wireless interfaces
+        MME_INTERFACE_NAME_FOR_S1_MME         = "eth0";                        # YOUR NETWORK CONFIG HERE
+        MME_IPV4_ADDRESS_FOR_S1_MME           = "192.168.12.62/24";            # YOUR NETWORK CONFIG HERE
+
+        # MME binded interface for S11 communication (GTPV2-C)
+        MME_INTERFACE_NAME_FOR_S11_MME        = "lo";                          # YOUR NETWORK CONFIG HERE
+        MME_IPV4_ADDRESS_FOR_S11_MME          = "127.0.11.1/8";                # YOUR NETWORK CONFIG HERE
+        MME_PORT_FOR_S11_MME                  = 2123;                          # YOUR NETWORK CONFIG HERE
+    };
+
+S-GW :
+{
+    # S-GW binded interface for S11 communication (GTPV2-C), if none selected the ITTI message interface is used
+    SGW_IPV4_ADDRESS_FOR_S11                = "127.0.11.2/8";            # YOUR NETWORK CONFIG HERE
+
+};
+
+In SPGW configuration file (/usr/local/etc/oai/spgw.conf):
+
+S-GW :
+{
+    NETWORK_INTERFACES : 
+    {
+        # S-GW binded interface for S11 communication (GTPV2-C), if none selected the ITTI message interface is used
+        SGW_INTERFACE_NAME_FOR_S11              = "lo";                        # YOUR NETWORK CONFIG HERE
+        SGW_IPV4_ADDRESS_FOR_S11                = "127.0.11.2/8";              # YOUR NETWORK CONFIG HERE
+
+        # S-GW binded interface for S1-U communication (GTPV1-U) can be ethernet interface, virtual ethernet interface, we don't advise wireless interfaces
+        SGW_INTERFACE_NAME_FOR_S1U_S12_S4_UP    = "eth0";                       # YOUR NETWORK CONFIG HERE, USE "lo" if S-GW run on eNB host
+        SGW_IPV4_ADDRESS_FOR_S1U_S12_S4_UP      = "192.168.12.62/24";           # YOUR NETWORK CONFIG HERE
+        SGW_IPV4_PORT_FOR_S1U_S12_S4_UP         = 2152;                         # PREFER NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING
+
+        # S-GW binded interface for S5 or S8 communication, not implemented, so leave it to none
+        SGW_INTERFACE_NAME_FOR_S5_S8_UP         = "none";                       # DO NOT CHANGE (NOT IMPLEMENTED YET)
+        SGW_IPV4_ADDRESS_FOR_S5_S8_UP           = "0.0.0.0/24";                 # DO NOT CHANGE (NOT IMPLEMENTED YET)
+    };
+...
+}
+
+
+P-GW =
+{
+    NETWORK_INTERFACES :
+    {
+        # P-GW binded interface for S5 or S8 communication, not implemented, so leave it to none
+        PGW_INTERFACE_NAME_FOR_S5_S8          = "none";                         # DO NOT CHANGE (NOT IMPLEMENTED YET)
+       
+        # P-GW binded interface for SGI (egress/ingress internet traffic)
+        PGW_INTERFACE_NAME_FOR_SGI            = "eth0";  #PAY ATTENTION!                       # YOUR NETWORK CONFIG HERE
+        PGW_MASQUERADE_SGI                    = "yes";                          # YOUR NETWORK CONFIG HERE
+       UE_TCP_MSS_CLAMPING                   = "no";                           # STRING, {"yes", "no"}.
+
+    };
+...
+   # DNS address communicated to UEs
+    DEFAULT_DNS_IPV4_ADDRESS     = "192.168.106.12";                            # YOUR NETWORK CONFIG HERE
+    DEFAULT_DNS_SEC_IPV4_ADDRESS = "192.168.12.100";                            # YOUR NETWORK CONFIG HERE
+
+...
+}
+
+In HSS freediameter configuration file (/usr/local/etc/oai/freeDiameter/hss_fd.conf):
+
+Identity = "hss.openair4G.eur";
+Realm = "openair4G.eur";
+
+In MME freediameter configuration file (/usr/local/etc/oai/freeDiameter/mme_fd.conf):
+
+Identity = "YOURHOSTNAME.openair4G.eur";
+Realm = "openair4G.eur";
+ConnectPeer= "hss.openair4G.eur" { ConnectTo = "127.0.0.1"; No_SCTP ; No_IPv6; Prefer_TCP; No_TLS; port = 3868;  realm = "openair4G.eur";};
+
+In HSS configuration file (/usr/local/etc/oai/hss.conf):
+
+MYSQL_user   = "root"; # put data that you defined while installation
+MYSQL_pass   = "root"; #Put here the root password of mysql database that was provided during installation
+OPERATOR_key = "1006020f0a478bf6b699f15c062e42b3"; # OP key for oai_db.sql, Must match to that of UE Sim card, 
+
+-------------------------------
+Compile and run EPC nodes
+
+Install certificates:
+cd ~/openair-cn/scripts
+./check_hss_s6a_certificate /usr/local/etc/oai/freeDiameter/ hss.openair4G.eur
+./check_mme_s6a_certificate /usr/local/etc/oai/freeDiameter/ YOURHOSTNAME.openair4G.eur #check YOURHOSTNAME
+
+Compile & Run HSS (ALWAYS RUN HSS FIRST):
+
+cd ~/openair-cn/scripts
+./build_hss -c
+./run_hss -i ~/openair-cn/src/oai_hss/db/oai_db.sql #Run only first to install database
+./run_hss  #Run this for all subsequent runs
+
+Compile & Run MME:
+Open a new terminal
+
+cd ~/openair-cn/scripts
+./build_mme -c
+./run_mme -i
+
+Compile & Run SP-GW:
+Open a new terminal
+
+cd ~/openair-cn/scripts
+./build_spgw -c
+./run_spgw -i
+
+---
+Probably everything should work now.

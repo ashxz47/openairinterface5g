@@ -1,0 +1,118 @@
+Installing docker:
+
+sudo apt-get install docker.io
+
+After installing docker set the rights:
+
+sudo usermod -a -G docker $USER
+
+Logout/login to make the docker rights work
+
+
+Creating a new Ubuntu 16.04 image:
+
+sudo debootstrap xenial xenial > /dev/null
+sudo tar -C xenial -c . | docker import - xenial
+
+Checking the image:
+
+docker run xenial cat /etc/lsb-release
+
+The command should show:
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04 LTS"
+
+Check the image name:
+
+docker images
+
+Run the image:
+
+docker run -it "IMAGE ID" /bin/bash
+
+The terminal should be opened. 
+Remebmer the hostname like "435f88cefc6c". 
+Exit the terminal:
+
+exit
+
+If you forgot the hostname (IMAGE ID) you can see the hostname in your terminal above
+Clone Ubuntu image to OAI1 image and save the changes:
+
+docker commit -m "clone" "IMAGE ID" oai1
+
+oai1 is a new repository name of our cloned image.
+Run image and install the software via command line:
+
+docker run -it oai1 /bin/bash
+
+Install repositories:
+
+apt-get install software-properties-common
+add-apt-repository universe
+add-apt-repository multiverse
+apt-get update
+
+Create the bridge network:
+
+sudo docker network create --driver=bridge --subnet=172.19.0.0/24 --gateway=172.19.0.1 oainet
+
+Run container with certain hostnames:
+
+docker run -h oai1 --add-host oai1.openair4G.eur:127.0.1.1 --add-host hss.openair4G.eur:127.0.1.1 --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules -it oai1 /bin/bash
+
+//docker run -h oai2 --add-host oai2.openair4G.eur:127.0.1.1 --add-host hss.openair4G.eur:127.0.1.1 --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules -it oai2 /bin/bash
+
+//backup begin
+//docker run -h oai1 --ip=172.19.0.10 --net=oainet --add-host oai1.openair4G.eur:127.0.1.1 --add-host hss.openair4G.eur:127.0.1.1 --privileged=true --cap-add=ALL -v /etc/mysql/mysql.conf.d/:/etc/mysql/mysql.conf.d/ -v /etc/mysql/conf.d/:/etc/mysql/conf.d/ -v /dev:/dev -v /lib/modules:/lib/modules -v /var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock -it oai2 /bin/bash
+//backup end
+
+#Lets look at the command above in parts:
+docker run - run container
+-h oai1 - hostname oai1
+--add-host - add row in /etc/hosts
+--privileged - give extended privileges to this container
+--cap-add - add Linux capabilities
+-v 	- bind the host directory to container's directory list
+-it  - keep STDIN open and attach pseudo terminal
+
+#Tips
+After container is runned if you have MySQL, the MySQL service should be restarted:
+
+service mysql restart
+
+If docker network doesn't work e.g. ping google.com shows no answer while it runs in container, you should restart Docker service:
+
+sudo service docker restart
+ 
+--------------------------------
+To run separate terminal in existing container check the container ID:
+
+docker container ps
+
+And run command:
+
+docker exec -it "CONTAINER ID" bash
+--------------------------------
+To save what you done in container
+Check the CONTAINER ID of the latest container: 
+
+docker container ls -l
+ 
+Save the container:
+
+docker commit -m "WHATYOUDONE" "CONTAINER ID" oai1
+
+Backup the container:
+
+docker save -o ~/container1.tar container1
+
+Restore the container. After restore the container will be available as image:
+
+docker load -i /root/container1.tar
+
+
+./openair-cn/scripts/run_
+ 

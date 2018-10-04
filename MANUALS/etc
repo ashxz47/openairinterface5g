@@ -1,0 +1,52 @@
+How to run VS Code as a root:
+sudo code --user-data-dir="~/.vscode-root"
+
+Docker rights:
+sudo usermod -a -G docker $USER
+
+Wireshark rights:
+sudo gpasswd -a $USER wireshark
+After that logout/login
+
+mme_ip_address: {
+		mme_ip_address0: {
+		 	ipv4       = "192.168.0.2";
+                        ipv6       = "192:168:30::17";
+                        active     = "yes";
+                        preference = "ipv4";
+			};
+
+		mme_ip_address1: {
+			ipv4       = "192.168.0.3";
+			ipv6       = "192:168:30::17";
+                        active     = "yes";
+                        preference = "ipv4";
+			};
+	};
+
+		
+mme_ip_address0: {
+		 	ipv4       = "192.168.0.2";
+                        ipv6       = "192:168:0::2";
+                        active     = "yes";
+                        preference = "ipv4";
+			};
+
+mme_ip_address1: {
+			ipv4       = "192.168.0.3";
+			ipv6       = "192:168:0::3";
+                        active     = "yes";
+                        preference = "ipv4";
+			};
+
+/oaisim.Rel14 --enb-conf /home/andrey/orig_oai/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf -s15 -AAWGN -y1 -b1 -u2 -Q0
+
+# first enter pin code on the modem
+echo -en "AT+CPIN=0000\r" | nc -u -w 1 localhost 10000
+
+# second send the detach command
+echo -en "AT+CGATT=0\r" | nc -u -w 1 localhost 10000
+
+# attach command
+echo -en "AT+CGATT=1\r" | nc -u -w 1 localhost 10000
+

@@ -1,0 +1,74 @@
+Download preconfigured docker containers, ashxz/oai1 preconfigured as first slice, ashxz/oai2 as a second:
+
+docker pull ashxz/oai1
+docker pull ashxz/oai2
+
+New terminal to run docker container for oai1, for the oai2 everything the same just need to change oai1 to oai2 everywhere:
+
+docker run -h oai1 --add-host oai1.openair4G.eur:127.0.1.1 --add-host hss.openair4G.eur:127.0.1.1 --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules -it oai1 /bin/bash
+
+root@oai1:
+
+service mysql restart
+./openair-cn5G/scripts/run_hss
+
+New terminal to run MME:
+
+docker container ls
+docker exec -it CONTAINERNAME /bin/bash
+
+root@oai1:
+check if IP address is 172.17.0.2:
+
+ifconfig
+
+if IP is OK:
+
+./openair-cn5G/scripts/run_mme -i
+
+else you should configure related IPs at mme.conf, spgw.conf, and enb.band7.generic.oaisim.local_mme.conf (see info in the end of file)
+
+New terminal to run SPGW:
+
+docker container ls
+docker exec -it CONTAINERNAME /bin/bash
+
+root@oai1:
+./openair-cn5G/scripts/run_spgw -i
+
+New terminal to run OAISIM5G:
+
+cd ~/openairinterface5g/targets/bin
+sudo ./oaisim.Rel14 --enb-conf /home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf -s15 -AAWGN -y1 -b1 -Q0 -u1
+
+If run two UEs -u2 instead of -u1
+
+New terminal to run configurator:
+
+cd ~/openairinterface5g/targets/bin
+./conf2uedata -c UE1.conf -o .
+
+
+CONFIG FILES (IP addresses etc):
+UE+eNB configuration:
+/home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf
+
+MME config at oai1:
+/usr/local/etc/oai/mme.conf
+
+SPGW config at oai1:
+/usr/local/etc/oai/spgw.conf
+
+ETC:
+Ping google.com from UE0 interface
+Add rules:
+
+sudo ip rule add to 172.16.0.2/32 table 200
+sudo ip rule add from 172.16.0.2/32 table 200
+
+Run ping:
+ping google.com -m 1 -I oip1
+
+To run VS code:
+sudo code --user-data-dir="~/.vscode-root"
+

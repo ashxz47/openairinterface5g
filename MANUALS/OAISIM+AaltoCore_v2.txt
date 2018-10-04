@@ -1,0 +1,475 @@
+How to run OAISIM with Aalto core (versions at Feb 15, 2018)
+
+Some parts of this document were taken from Aalto's readme.md.
+Also, some instructions were taken from OpenAir Interface website: http://www.openairinterface.org/?page_id=25
+
+
+Preliminaries
+---------------------------------------------
+Aalto core was tested on Ubuntu 16.04.2 kernel 4.10.
+The 'gcc' is needed the C99 mode to compile Aalto core code. Ubuntu 16.04 is ok with this by default but 14.04 doesn't. If your compiler has no C99 mode, you get the following error: "'for' loop initial declaration used outside C99 mode". Be sure that C99 mode has been activated in your compiler.
+
+Be careful if install openair-cn (OAI core) and Aalto core on the same machine. They both are trying to install DB - mysql or mariadb that leads the conflict!!!
+
+The way of install of the Aalto core for local use is described below (at this moment).
+Before doing this instruction you should have the source code of AaltoMME and AaltoSPGW on your computer. Because both codes are in private use the way to get them is not described here.
+
+Also, you need to patch the AaltoMME to get attached OAISIM to it.
+
+
+Setup of AaltoMME and HSS
+----------------------------------------------
+
+Installing packages 
+!!! WARNING !!! if you have installed mysql already do not install mariadb-server !!! and remove the "mariadb-server" from the command below!!! 
+
+sudo apt-get update
+sudo apt-get install libsctp1 libevent-2.0-5 libglib2.0-0 libmysqlclient20 mariadb-server libconfig9 build-essential cmake libevent-dev libsctp-dev libmysqlclient-dev libconfig-dev libglib2.0-dev libssl-dev
+
+
+Modification of AaltoMME to run OAISIM with it
+-----------------------------------------------
+There is a problem with SMC protocol in OAISIM.
+OAISIM does not understand Security Mode Command message which AaltoMME sends to it. This is because AaltoMME sends to UE not only its LTE security capabilities but adds the security capabilities related to UTMS and GSM. 
+To solve the problem we just remove additional fields in Aalto SMC message.
+Go to AaltoMME directory and open file with a text editor:
+
+nano mme/S1/NAS/NAS_EMM.c
+
+Find and modify the lines mentioned below (they should be situated around lines 496-514):
+
+ memset(capabilities, 0, 2);
+      
+//    capabilities[3] &= 0x7F; //Commented to remove from SMC message
+   
+//    capabilities[4]  = 0; //Commented to remove from SMC message
+  
+//    capabilities[4] |= (emm->msNetCap[0] & 0x80) >> 1; /* GEA/1    */ //Commented to remove from SMC message
+//    capabilities[4] |= (emm->msNetCap[1] & 0x7E) >> 1; /* GEA/2..7 *///Commented to remove from SMC message
+
+    nasIe_lv_t4(&pointer, capabilities, 2);
+
+
+Building the AaltoMME
+---------------------------------------------
+Go to AaltoMME directory and do:
+
+mkdir Release && cd Release
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+sudo make install
+
+After that you should copy and make configuration of MME:
+
+sudo cp /etc/aalto/mme.cfg.template /etc/aalto/mme.cfg
+sudo nano /etc/aalto/mme.cfg
+
+Example of mme.cfg for local use (don't put the dash lines (----) to the configuration file!!!):
+----------------------------------------------
+mme =
+{
+  name = "develMME";
+  ipv4 = "127.0.1.2";
+
+  #Directory to store persistent state
+  #state_directory = "/var/lib/aalto"
+
+  servedGUMMEIs = ( {
+    Served_PLMNs = ( {
+                        MCC = 244;	#Aalto core + Nokia BS
+                        MNC = 38;   #
+             } );
+    Served_MME_GroupIDs = (32772 ); #0x8004
+    Served_MME_Codes = (3 );
+    }
+  );
+
+  relative_Capacity = 41;	#Weight Factor (see 3gpp 23.401 clause 4.3.7.2)
+
+  S6a = {
+    host     = "localhost";
+    db       = "hss_lte_db";
+    user     = "hss";
+    password = "hss"
+  }
+};
+
+nodes =
+{
+  sgw = ( { name  = "default";
+            ipv4 = "127.0.1.4";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; },
+          { name = "default";
+            ipv4 = "127.0.1.4";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; }
+        );
+
+  pgw = ( { name = "default";
+            ipv4 = "127.0.1.6";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up"; },
+          { name = "default";
+            ipv4 = "127.0.1.6";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; }
+        );
+  mme = ( { name  = "default";
+            ipv4 = "127.0.1.2";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; },
+          { name = "default";
+            ipv4 = "127.0.1.2";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; }
+        );
+  sdn = ( { name  = "default";
+            ipv4 = "127.0.1.3";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; },
+          { name = "default";
+            ipv4 = "127.0.1.3";
+            ipv6  = "fe80::e086:9dff:fe4c:101a";
+            status = "up" ; }
+        );
+};
+-----------------------------------------------------
+
+Setup HSS database
+-------------------------------------
+
+1. Install MariaDB or MySQL on your machine (if you haven't already done so), MariaDB repository configuration tool: https://downloads.mariadb.org/mariadb/repositories/.
+After installing mariaDB run its configuration script:
+
+sudo mysql_secure_installation
+
+After you done, run the script that creates the database and the tables. You should be in AaltoMME directory to run commands!
+NOTE: ROOTUSERFORDB - replace by name of your root user.
+
+sudo mysql -u ROOTUSERFORDB -p < mme/S6a/scripts/hss_lte_db.sql
+
+Run the script that creates demo user. 
+
+sudo mysql -u ROOTUSERFORDB -p < mme/S6a/scripts/userdata.sql
+
+NOTE: For experiments, you can add just one user e.g. with IMSI=244380000000100 by query:
+NOTE: To do the query don't forget to log in to your database: sudo mysql -u ROOTUSERFORDB -p
+
+-------------------------
+USE `hss_lte_db`;
+
+LOCK TABLES `operators` WRITE;
+/*!40000 ALTER TABLE `operators` DISABLE KEYS */;
+INSERT INTO `operators` VALUES (244,38,0xF964BA9478CDC6C72EAF1E95DBC6674A,0x8000,'Aalto 5GTNF');
+/*!40000 ALTER TABLE `operators` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `pdn_subscription_ctx` WRITE;
+/*!40000 ALTER TABLE `pdn_subscription_ctx` DISABLE KEYS */;
+INSERT INTO `pdn_subscription_ctx` VALUES
+(244,38,0x0000000100,0,'internet',0x00,0x00,0x0000,0x01,NULL,100000000,100000000,9,15,0x00,0x00);
+/*!40000 ALTER TABLE `pdn_subscription_ctx` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `subscriber_profile` WRITE;
+/*!40000 ALTER TABLE `subscriber_profile` DISABLE KEYS */;
+INSERT INTO `subscriber_profile` VALUES
+(244,38,0x0000000100,35838000100,0x21937176100070199087355677450633,0x824093A4D35534378A6C20F73753EE57,0x000000000001,0x0000000000000000,NULL,NULL,NULL,100000000,100000000,NULL,NULL);
+/*!40000 ALTER TABLE `subscriber_profile` ENABLE KEYS */;
+UNLOCK TABLES;
+--------------------------
+
+NOTE: You can use the following user and password for interacting with mysql are hss:hss
+
+
+Run MME
+--------------------------------------
+You can try to run MME as a service: 
+
+sudo systemctl start MME
+
+To see the MME log run the following command:
+
+journalctl -n20 -f -u MME
+
+NOTE: -n20 means 20 last log entries to show so you can change the amount,  -f means to follow the log updates. 
+
+
+Setup of AaltoSPGW
+--------------------------------------
+Install necessary packages: 
+
+sudo apt-get install build-essential m4 libtool autoconf libevent-dev libevent-2.0-5
+
+Go to AaltoSPGW directory and run:
+
+libtoolize -i
+autoreconf -i -v
+./configure --prefix=/usr
+make
+sudo make install
+
+After that you should config the AaltoSPGW module:
+
+sudo cp /etc/aalto/spgw.cfg.template /etc/aalto/spgw.cfg
+sudo nano /etc/aalto/spgw.cfg
+
+Example of spgw.cfg for local use (don't put the dash lines (----) to the configuration file!!!):
+-------------------------------------
+
+IPADDR_S11SGW="127.0.1.4"
+IPADDR_S5SGW="127.0.1.5"
+IPADDR_S5PGW="127.0.1.6"
+IPADDR_GTPU="127.0.1.8"
+IPADDR_IPUE_NETW="172.30.0.0"
+IPADDR_IPUE_MASK="255.255.255.0"
+SGI_TCP_MSS="1400"
+SGI_GW="172.17.78.135"	#your Internet access gateway
+PDN_DNS1="8.8.8.8"
+PDN_DNS2="8.8.4.4"
+PDN_MTU="1440"
+
+----------------------------------- 
+
+After installing the software, make sure systemd reloads the new unit files:
+
+sudo systemctl daemon-reload
+
+Enable and start the network to add the new devices (required for P-GW functionality):
+
+sudo systemctl enable systemd-networkd
+sudo systemctl start systemd-networkd
+
+
+Run SPGW
+--------------------------------------
+You can run SPGW as a service: 
+
+sudo systemctl start spgw
+
+To see the SPGW log run the following command:
+
+journalctl -n20 -f -u spgw
+
+
+Setup OpenAir Interface system simulator (OAISIM) to simulate UE and eNB
+-------------------------------------------
+Installing git and downloading OpenAir Interface (OAI) source code:
+
+sudo apt-get install git
+echo -n | openssl s_client -showcerts -connect gitlab.eurecom.fr:443 2>/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
+git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git
+
+
+Setup the SIM card configuration
+------------------------------------------
+The OAI compilation script creates the virtual SIM card during the building process. Before compilation the OAISIM you should configure the virtual SIM card.
+
+The SIM configuration file used by default is openair3/NAS/TOOLS/ue_eurecom_test_sfr.conf
+So you can modify it (do not forget to copy the config file if it is needed for you in future):
+
+nano ~/openairinterface5g/openair3/NAS/TOOLS/ue_eurecom_test_sfr.conf
+
+Configuration data should be the same as it is in your DB. e.g. below the configuration for IMSI=244380000000100 (which was written to DB earlier if you followed this document). 
+NOTE: don't put the dash lines (----) to the configuration file!!!
+You can find an additional information how to create a new SIM card by special tool in Appendix A of this document.
+
+-------------------------------
+
+# List of known PLMNS
+PLMN: {
+    PLMN0: {
+           FULLNAME="Aalto 5GTNF";
+           SHORTNAME="A5G";
+           MNC="38";
+           MCC="244";
+
+    };
+   
+};
+
+UE0:
+{
+    USER: {
+        IMEI="356113022094149";
+        MANUFACTURER="EURECOM";
+        MODEL="LTE Android PC";
+        PIN="0000";
+    };
+
+    SIM: {
+        MSIN="0000000100";
+        USIM_API_K="21937176100070199087355677450633";
+        OPC="824093a4d35534378a6c20f73753ee57";
+        MSISDN="35838000100";
+    };
+
+    # Home PLMN Selector with Access Technology
+    HPLMN= "24438";
+
+    # User controlled PLMN Selector with Access Technology
+    UCPLMN_LIST = ();
+
+    # Operator PLMN List
+    OPLMN_LIST = ("24438");
+
+    # Operator controlled PLMN Selector with Access Technology
+    OCPLMN_LIST = ();
+
+    # Forbidden plmns
+    FPLMN_LIST = ();
+
+    # List of Equivalent HPLMNs
+    EHPLMN_LIST= ();
+};
+
+-----------------------------------
+
+
+Building the OAI:
+-----------------------------------
+
+cd ~/openairinterface5g
+source oaienv 	
+cd cmake_targets
+./build_oai -I
+./build_oai -x -c --oaisim --UE
+
+After the code was built, you should configure UE+eNB:
+
+nano ~/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf
+
+Modify the following parameters:
+    
+    tracking_area_code  =  "1";
+
+    mobile_country_code =  "244";
+
+    mobile_network_code =  "38";
+
+
+ mme_ip_address      = ( { ipv4       = "127.0.1.2";
+                              ipv6       = "127:0:1::2";
+                              active     = "yes";
+                              preference = "ipv4";
+                            }
+                          );
+
+    NETWORK_INTERFACES :
+    {
+        ENB_INTERFACE_NAME_FOR_S1_MME            = "lo";
+        ENB_IPV4_ADDRESS_FOR_S1_MME              = "127.0.1.10/8";
+
+        ENB_INTERFACE_NAME_FOR_S1U               = "lo";
+        ENB_IPV4_ADDRESS_FOR_S1U                 = "127.0.1.10/8";
+        ENB_PORT_FOR_S1U                         = 2152; # Spec 2152
+    };
+
+
+
+
+
+Run OAISIM with a new SIM card
+-----------------------------------------
+Now you can run OAISIM to imitate UE+eNB.
+Be sure that you have been running AaltoMME and AaltoSPGW (how to run in: Run MME and Run SPGW). 
+
+Go to OAI script directory:
+
+cd ~/openairinterface5g/cmake_targets/tools/
+
+And run UE+eNB simulation by command: 
+
+sudo -E ./run_enb_ue_virt_s1
+
+Follow the logs to see that UE and eNB are connected to Aalto MME and Aalto SPGW.
+
+HINT: You can use Wireshark to monitor the packets between OAISIM and Aalto core (to monitor the "Loopback: lo" interface).
+
+
+
+Appendix A: Creating a new USIM for OAISIM
+-------------------------------
+You can create a new SIM card or multiple cards for the simulator. The SIM card should contain all necessary information from your DB.
+To do this you should use 'conf2uedata' application which was compiled by OAI. You can find the program in ~/openairinterface5g/targets/bin. These files that define the USIM are in binary form and hidden in the filesystem: .ue.nvramX .ue_emm.nvramX .usim.nvramX. Where X is the index of the UE
+NOTE: More information you can read at https://gitlab.eurecom.fr/oai/openairinterface5g/wikis/how-to-run-oaisim-with-multiple-ue
+
+At first create a new config file for SIM card:
+
+cd ~/openairinterface5g/targets/bin
+nano UE1.conf
+
+Configuration data should be the same as it is in your DB. e.g. below the configuration for IMSI=244380000000100 (which was written to DB earlier if you followed this document). 
+NOTE: don't put the dash lines (----) to the configuration file!!!
+
+-------------------------------
+
+# List of known PLMNS
+PLMN: {
+    PLMN0: {
+           FULLNAME="Aalto 5GTNF";
+           SHORTNAME="A5G";
+           MNC="38";
+           MCC="244";
+
+    };
+   
+};
+
+UE0:
+{
+    USER: {
+        IMEI="356113022094149";
+        MANUFACTURER="EURECOM";
+        MODEL="LTE Android PC";
+        PIN="0000";
+    };
+
+    SIM: {
+        MSIN="0000000100";
+        USIM_API_K="21937176100070199087355677450633";
+        OPC="824093a4d35534378a6c20f73753ee57";
+        MSISDN="35838000100";
+    };
+
+    # Home PLMN Selector with Access Technology
+    HPLMN= "24438";
+
+    # User controlled PLMN Selector with Access Technology
+    UCPLMN_LIST = ();
+
+    # Operator PLMN List
+    OPLMN_LIST = ("24438");
+
+    # Operator controlled PLMN Selector with Access Technology
+    OCPLMN_LIST = ();
+
+    # Forbidden plmns
+    FPLMN_LIST = ();
+
+    # List of Equivalent HPLMNs
+    EHPLMN_LIST= ();
+};
+
+-------------------------------------------
+
+When the configuration file is filled you can run the following command:
+
+./conf2uedata -c UE1.conf -o .
+
+NOTE: "-o ." to write the output files to the same directory. You should write the SIM files to the same directory because OAISIM takes UE parameters from it by default.
+
+Check that SIM files was created successfully:
+
+ls -la
+
+Check the date and time of .ue.nvram .ue_emm.nvram .usim.nvram. They should be just created.
+
+To run two or more UEs:
+
+cd ~/openairinterface5g/targets/bin	
+sudo ./oaisim.Rel14 --enb-conf /home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf -s15 -AAWGN -y1 -b1 -Q0 -u2
+
+
+
