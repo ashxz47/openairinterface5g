@@ -1,0 +1,223 @@
+How to run OAISIM version at Feb 15, 2018)
+
+
+Setup OpenAir Interface system simulator (OAISIM) to simulate UE and eNB
+-------------------------------------------
+Installing git and downloading OpenAir Interface (OAI) source code:
+
+sudo apt-get install git
+echo -n | openssl s_client -showcerts -connect gitlab.eurecom.fr:443 2>/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
+git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git
+
+
+Setup the SIM card configuration
+------------------------------------------
+The OAI compilation script creates the virtual SIM card during the building process. Before compilation the OAISIM you should configure the virtual SIM card.
+
+The SIM configuration file used by default is openair3/NAS/TOOLS/ue_eurecom_test_sfr.conf
+So you can modify it (do not forget to copy the config file if it is needed for you in future):
+
+nano ~/openairinterface5g/openair3/NAS/TOOLS/ue_eurecom_test_sfr.conf
+
+Configuration data should be the same as it is in your DB. e.g. below the configuration for IMSI=244380000000100 (which was written to DB earlier if you followed this document). 
+NOTE: don't put the dash lines (----) to the configuration file!!!
+You can find an additional information how to create a new SIM card by special tool in Appendix A of this document.
+
+-------------------------------
+
+# List of known PLMNS
+PLMN: {
+    PLMN0: {
+           FULLNAME="Aalto 5GTNF";
+           SHORTNAME="A5G";
+           MNC="38";
+           MCC="244";
+
+    };
+   
+};
+
+UE0:
+{
+    USER: {
+        IMEI="356113022094149";
+        MANUFACTURER="EURECOM";
+        MODEL="LTE Android PC";
+        PIN="0000";
+    };
+
+    SIM: {
+        MSIN="0000000100";
+        USIM_API_K="21937176100070199087355677450633";
+        OPC="824093a4d35534378a6c20f73753ee57";
+        MSISDN="35838000100";
+    };
+
+    # Home PLMN Selector with Access Technology
+    HPLMN= "24438";
+
+    # User controlled PLMN Selector with Access Technology
+    UCPLMN_LIST = ();
+
+    # Operator PLMN List
+    OPLMN_LIST = ("24438");
+
+    # Operator controlled PLMN Selector with Access Technology
+    OCPLMN_LIST = ();
+
+    # Forbidden plmns
+    FPLMN_LIST = ();
+
+    # List of Equivalent HPLMNs
+    EHPLMN_LIST= ();
+};
+
+-----------------------------------
+
+
+Building the OAI:
+-----------------------------------
+
+cd ~/openairinterface5g
+source oaienv 	
+cd cmake_targets
+./build_oai -I
+./build_oai -x -c --oaisim --UE
+
+After the code was built, you should configure UE+eNB:
+
+nano ~/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf
+
+Modify the following parameters:
+    
+    tracking_area_code  =  "1";
+
+    mobile_country_code =  "244";
+
+    mobile_network_code =  "38";
+
+
+ mme_ip_address      = ( { ipv4       = "127.0.1.2";
+                              ipv6       = "127:0:1::2";
+                              active     = "yes";
+                              preference = "ipv4";
+                            }
+                          );
+
+    NETWORK_INTERFACES :
+    {
+        ENB_INTERFACE_NAME_FOR_S1_MME            = "lo";
+        ENB_IPV4_ADDRESS_FOR_S1_MME              = "127.0.1.10/8";
+
+        ENB_INTERFACE_NAME_FOR_S1U               = "lo";
+        ENB_IPV4_ADDRESS_FOR_S1U                 = "127.0.1.10/8";
+        ENB_PORT_FOR_S1U                         = 2152; # Spec 2152
+    };
+
+
+
+
+
+Run OAISIM with a new SIM card
+-----------------------------------------
+Now you can run OAISIM to imitate UE+eNB.
+Be sure that you have been running AaltoMME and AaltoSPGW (how to run in: Run MME and Run SPGW). 
+
+Go to OAI script directory:
+
+cd ~/openairinterface5g/cmake_targets/tools/
+
+And run UE+eNB simulation by command: 
+
+sudo -E ./run_enb_ue_virt_s1
+
+Follow the logs to see that UE and eNB are connected to Aalto MME and Aalto SPGW.
+
+HINT: You can use Wireshark to monitor the packets between OAISIM and Aalto core (to monitor the "Loopback: lo" interface).
+
+
+
+Appendix A: Creating a new USIM for OAISIM
+-------------------------------
+You can create a new SIM card or multiple cards for the simulator. The SIM card should contain all necessary information from your DB.
+To do this you should use 'conf2uedata' application which was compiled by OAI. You can find the program in ~/openairinterface5g/targets/bin. These files that define the USIM are in binary form and hidden in the filesystem: .ue.nvramX .ue_emm.nvramX .usim.nvramX. Where X is the index of the UE
+NOTE: More information you can read at https://gitlab.eurecom.fr/oai/openairinterface5g/wikis/how-to-run-oaisim-with-multiple-ue
+
+At first create a new config file for SIM card:
+
+cd ~/openairinterface5g/targets/bin
+nano UE1.conf
+
+Configuration data should be the same as it is in your DB. e.g. below the configuration for IMSI=244380000000100 (which was written to DB earlier if you followed this document). 
+NOTE: don't put the dash lines (----) to the configuration file!!!
+
+-------------------------------
+
+# List of known PLMNS
+PLMN: {
+    PLMN0: {
+           FULLNAME="Aalto 5GTNF";
+           SHORTNAME="A5G";
+           MNC="38";
+           MCC="244";
+
+    };
+   
+};
+
+UE0:
+{
+    USER: {
+        IMEI="356113022094149";
+        MANUFACTURER="EURECOM";
+        MODEL="LTE Android PC";
+        PIN="0000";
+    };
+
+    SIM: {
+        MSIN="0000000100";
+        USIM_API_K="21937176100070199087355677450633";
+        OPC="824093a4d35534378a6c20f73753ee57";
+        MSISDN="35838000100";
+    };
+
+    # Home PLMN Selector with Access Technology
+    HPLMN= "24438";
+
+    # User controlled PLMN Selector with Access Technology
+    UCPLMN_LIST = ();
+
+    # Operator PLMN List
+    OPLMN_LIST = ("24438");
+
+    # Operator controlled PLMN Selector with Access Technology
+    OCPLMN_LIST = ();
+
+    # Forbidden plmns
+    FPLMN_LIST = ();
+
+    # List of Equivalent HPLMNs
+    EHPLMN_LIST= ();
+};
+
+-------------------------------------------
+
+When the configuration file is filled you can run the following command:
+
+./conf2uedata -c UE1.conf -o .
+
+NOTE: "-o ." to write the output files to the same directory. You should write the SIM files to the same directory because OAISIM takes UE parameters from it by default.
+
+Check that SIM files was created successfully:
+
+ls -la
+
+Check the date and time of .ue.nvram .ue_emm.nvram .usim.nvram. They should be just created.
+
+To run two or more UEs:
+
+cd ~/openairinterface5g/targets/bin	
+sudo ./oaisim.Rel14 --enb-conf /home/andrey/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf -s15 -AAWGN -y1 -b1 -Q0 -u2
+
+
+
